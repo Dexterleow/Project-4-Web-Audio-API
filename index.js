@@ -2,7 +2,7 @@ var express = require('express');
 var fs = require('fs');
 var ejs = require('ejs');
 var path = require('path');
-
+var handlebars = require('handlebars');
 
 //Using express to serve static files
 var app = express();

@@ -4,8 +4,32 @@
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<title>Playing music with Robots</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<!-- <script src="/handlebars.runtime-v4.0.5.js"></script> -->
+	<script src="/handlebars-v3.0.3.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
+	<script src="/spotify.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+
+
+	<!-- spotify -->
+
+	<div class="container">
+		<h1>Search for an Artist</h1>
+		<p>Type an artist name and click on "Search". Then, click on any album from the results to play 30 seconds of its first track.</p>
+		<form id="search-form">
+			<input type="text" id="query" value="" class="form-control" placeholder="Type an Artist Name"/>
+			<input type="submit" id="search" class="btn btn-primary" value="Search" />
+		</form>
+		<div id="results"></div>
+	</div>
+	<script id="results-template" type="text/x-handlebars-template">
+		{{#each albums.items}}
+		<div style="background-image:url({{images.0.url}})" data-album-id="{{id}}" class="cover"></div>
+		{{/each}}
+	</script>
+
 
 	<!-- button for audio loop -->
 	<!-- Greg_baumont_-_Minimal_french_electro_loop -->
@@ -16,7 +40,7 @@
 		<button id="button-loop-3" type="button" value="3" class="dial">3</button>
 	</form>
 
-Sound Controls
+	Sound Controls
 	<form>
 		<!-- <input type="text" value="100" class="dial"> -->
 		<button id="button-volume" type="button" form="form" class="dial">Volume</button>
@@ -31,7 +55,6 @@ Sound Controls
 		<button id="button-loop-5" type="button" value="5" class="dial">5</button>
 		<button id="button-loop-6" type="button" value="6" class="dial">6</button>
 	</form>
-
 
 
 	<script src="/jquery.knob.min.js"></script>

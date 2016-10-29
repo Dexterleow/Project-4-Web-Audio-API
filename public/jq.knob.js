@@ -1,11 +1,11 @@
 $('.dial').knob(
 {
-  // "readOnly":true,
+  "readOnly":true,
   // 'min':10,
   // 'max':100,
-  'width':100,
-  'height':100,
+  'width':150,
+  'height':150,
   // 'displayInput':true,
-  'fgColor':"#FF0000",
+  'fgColor':"#87ceeb",
 
 });
