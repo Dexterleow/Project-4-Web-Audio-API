@@ -1,57 +1,28 @@
 
-//AudioContext. Always need to set this ip when using web audio api.
-// window.AudioContext = window.AudioContext || window.webkitAudioContext;
-// context = new AudioContext();
-//
-// //Process function
-// function process(Data) {
-//   source = context.createBufferSource(); // Create Sound Source
-//   context.decodeAudioData(Data, function(buffer){
-//     source.buffer = buffer;
-//     source.connect(context.destination);
-//     source.start(context.currentTime);
-//   });
-// };
-//
-// //XMLHTTPRequest
-// function loadSound() {
-//   var request = new XMLHttpRequest();
-//   request.open("GET", "/music", true);
-//   request.responseType = "arraybuffer";
-//
-//   request.onload = function() {
-//       var Data = request.response;
-//       process(Data);
-//   };
-//
-//   request.send();
-// };
-//
-// loadSound()
-
-
-
-
-
-
-//--------------
 // Audio Object
-//--------------
 var audio = {
+// buffer element will hold our downloaded and decoded audio elements
     buffer: {},
+//compatibility element will be populated with string properties
     compatibility: {},
+//files show list of audio files
+//Greg_baumont_-_Minimal_french_electro_loop
     files: [
         'synth.wav',
-        'beat.wav'
+        'beat.wav',
+        'dance_loop.mp3'
     ],
+  //proceed boolean will have things proceed by default if browser supports web audio
     proceed: true,
+  // source_loop object is where buffer elements actually get played
     source_loop: {},
+  //source_once object will only be used to play sounds once from an offset before a source_loop will take over and loop indefinitely
     source_once: {}
 };
 
-//-----------------
+
 // Audio Functions
-//-----------------
+// The audio.findSync() function has one purpose and that is to return an offset for the audio that is about to play to start at
 audio.findSync = function(n) {
     var first = 0,
         current = 0,
@@ -74,12 +45,16 @@ audio.findSync = function(n) {
     return offset;
 };
 
+// Javascript - audio.play
 audio.play = function(n) {
+//boolean to play and stop the audio source
+// set audio.source_loop to a new BufferSource
     if (audio.source_loop[n]._playing) {
         audio.stop(n);
     } else {
         audio.source_loop[n] = audio.context.createBufferSource();
         audio.source_loop[n].buffer = audio.buffer[n];
+//connect the audio to the default destination of sound output
         audio.source_loop[n].loop = true;
         audio.source_loop[n].connect(audio.context.destination);
 
@@ -92,8 +67,10 @@ audio.play = function(n) {
             Compensate by using noteGrainOn() with an offset to play once and then schedule a noteOn() call to loop after that.
             */
             audio.source_once[n] = audio.context.createBufferSource();
+      //connect to a new buffer source, assign a buffer and then connect the speakers.
             audio.source_once[n].buffer = audio.buffer[n];
             audio.source_once[n].connect(audio.context.destination);
+      // "noteGrainOn" function with three parameters. The first is set to 0 and means play immediately. The second is how far into the buffer to start playback from. The third is duration to play with one very important caveat
             audio.source_once[n].noteGrainOn(0, offset, audio.buffer[n].duration - offset); // currentTime, offset, duration
             /*
             Note about the third parameter of noteGrainOn().
@@ -111,6 +88,7 @@ audio.play = function(n) {
     }
 };
 
+// Javascript - audio.stop
 audio.stop = function(n) {
     if (audio.source_loop[n]._playing) {
         audio.source_loop[n][audio.compatibility.stop](0);
@@ -122,9 +100,8 @@ audio.stop = function(n) {
     }
 };
 
-//-----------------------------
+
 // Check Web Audio API Support
-//-----------------------------
 try {
     // More info at http://caniuse.com/#feat=audio-api
     window.AudioContext = window.AudioContext || window.webkitAudioContext;
@@ -135,9 +112,7 @@ try {
 }
 
 if (audio.proceed) {
-    //---------------
-    // Compatibility
-    //---------------
+    // Javascript Compatibility
     (function() {
         var start = 'start',
             stop = 'stop',
@@ -154,32 +129,38 @@ if (audio.proceed) {
         audio.compatibility.stop = stop;
     })();
 
-    //-------------------------------
     // Setup Audio Files and Buttons
-    //-------------------------------
+    //For loop to go through our audio.files array
     for (var a in audio.files) {
         (function() {
             var i = parseInt(a) + 1;
+            //create a new XHR and proceed to configure it
             var req = new XMLHttpRequest();
+            // req.open is set to use a GET request for audio.files[x] because of boolean
             req.open('GET', audio.files[i - 1], true); // array starts with 0 hence the -1
+            //req.responseType to digest the format
             req.responseType = 'arraybuffer';
+            // function to process audio once it finishes downloading.
             req.onload = function() {
                 audio.context.decodeAudioData(
                     req.response,
                     function(buffer) {
                         audio.buffer[i] = buffer;
                         audio.source_loop[i] = {};
+              //DOM manipulation. finding the button associated with audio
                         var button = document.getElementById('button-loop-' + i);
                         button.addEventListener('click', function(e) {
                             e.preventDefault();
                             audio.play(this.value);
                         });
                     },
+              //define an error when the audio fails to decode
                     function() {
                         console.log('Error decoding audio "' + audio.files[i - 1] + '".');
                     }
                 );
             };
+            //with everything in place, we run req.send to activate the XHR and loop
             req.send();
         })();
     }
