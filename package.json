@@ -1,0 +1,10 @@
+{
+  "name": "playing-music-with-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "ejs": "^2.5.2",
+    "express": "^4.14.0"
+  }
+}
