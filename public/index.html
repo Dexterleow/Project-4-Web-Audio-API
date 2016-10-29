@@ -13,52 +13,185 @@
 <body>
 
 
-	<!-- spotify -->
+	<!-- Analyser Bar -->
+	<style type="text/css">
+	/*#mp3_player{
+		width: 500px;
+		height: 60px;
+		background: #000;
+		padding:5px;
+		margin:50px auto;
+	}
+	#audio_box{
+		width: 500px;
+		background: #000;
+		float: left;
+	}
+	#analyser{
+		width: 500px;
+		height: 30px;
+		background: #002D3C;
+		float: left;
+			}*/
 
-	<div class="container">
-		<h1>Search for an Artist</h1>
-		<p>Type an artist name and click on "Search". Then, click on any album from the results to play 30 seconds of its first track.</p>
-		<form id="search-form">
-			<input type="text" id="query" value="" class="form-control" placeholder="Type an Artist Name"/>
-			<input type="submit" id="search" class="btn btn-primary" value="Search" />
-		</form>
-		<div id="results"></div>
-	</div>
-	<script id="results-template" type="text/x-handlebars-template">
-		{{#each albums.items}}
-		<div style="background-image:url({{images.0.url}})" data-album-id="{{id}}" class="cover"></div>
-		{{/each}}
+		div#mp3_player{ width:500px; height:60px; background:#000; padding:5px; margin:50px auto; }
+div#mp3_player > div > audio{  width:500px; background:#000; float:left;  }
+div#mp3_player > canvas{ width:500px; height:30px; background:#002D3C; float:left; }
+	}
+	</style>
+	<!-- <script>
+	//create a new instance of an audio object and adjust some of its properties
+	var audio = new Audio();
+	audio.src = "beat.wav";
+	audio.controls = true;
+	audio.loop = false;
+	audio.autoplay = true;
+	//Establish all variables that your Analyser will use
+	var canvas, ctx, source, context, analyser, fbc_array, bars, bar_x, bar_width, bar_height;
+	// Initialize the MP3 player after the page loads all of its HTML into the window
+	window.addEventListener("load", initMp3Player, false);
+	function initMp3Player(){
+		document.getElementById('audio_box').appendChild(audio);
+		context = new webkitAudioContext(); // AudioContext object instance
+		//can remove webkit in the above line
+		// window.AudioContext = window.AudioContext || window.webkitAudioContext;
+		analyser = context.createAnalyser(); // AnalyserNode method
+		canvas = document.getElementById('analyser_render');
+		ctx = canvas.getContext('2d');
+		// Re-route audio playback into the processing graph of the AudioContext
+		//Methods of audio api
+		source = context.createMediaElementSource(audio);
+		source.connect(analyser);
+		analyser.connect(context.destination);
+		frameLooper();
+	}
+
+	// frameLooper() animates any style of graphics you wish to the audio frequency
+	// Looping at the default frame rate that the browser provides(approx. 60 FPS)
+	function frameLooper(){
+		window.webkitRequestAnimationFrame(frameLooper);
+		fbc_array = new Uint8Array(analyser.frequencyBinCount);
+		analyser.getByteFrequencyData(fbc_array);
+		ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
+		ctx.fillStyle = '#00CCFF'; // Color of the bars
+		bars = 100; //number of bars
+		for (var i = 0; i < bars; i++) {
+			bar_x = i * 3; //spacing of the bars
+			bar_width = 2;
+			bar_height = -(fbc_array[i] / 2);
+			//  fillRect( x, y, width, height ) // Explanation of the parameters below
+			ctx.fillRect(bar_x, canvas.height, bar_width, bar_height);
+		}
+	}
+
+	</script> -->
+
+	<script>
+	// Create a new instance of an audio object and adjust some of its properties
+	// var audio = new Audio();
+	// audio.src = 'dance_drums.mp3';
+	// audio.controls = true;
+	// audio.loop = false;
+	// audio.autoplay = true;
+	// Establish all variables that your Analyser will use
+var canvas, ctx, source, context, analyser, fbc_array, bars, bar_x, bar_width, bar_height;
+	// Initialize the MP3 player after the page loads all of its HTML into the window
+	window.addEventListener("load", initMp3Player, false);
+	function initMp3Player(){
+//to create the variables
+		var audio = new Audio();
+		audio.src = 'dance_drums.mp3';
+		audio.controls = true;
+		audio.loop = false;
+		audio.autoplay = true;
+
+		document.getElementById('audio_box').appendChild(audio);
+		context = new webkitAudioContext(); // AudioContext object instance
+		analyser = context.createAnalyser(); // AnalyserNode method
+		canvas = document.getElementById('analyser_render');
+		ctx = canvas.getContext('2d');
+		// Re-route audio playback into the processing graph of the AudioContext
+		source = context.createMediaElementSource(audio);
+		source.connect(analyser);
+		analyser.connect(context.destination);
+		frameLooper();
+	}
+	// frameLooper() animates any style of graphics you wish to the audio frequency
+	// Looping at the default frame rate that the browser provides(approx. 60 FPS)
+	function frameLooper(){
+		window.webkitRequestAnimationFrame(frameLooper);
+		fbc_array = new Uint8Array(analyser.frequencyBinCount);
+		analyser.getByteFrequencyData(fbc_array);
+		ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
+		ctx.fillStyle = '#00CCFF'; // Color of the bars
+		bars = 100;
+		for (var i = 0; i < bars; i++) {
+			bar_x = i * 3;
+			bar_width = 2;
+			bar_height = -(fbc_array[i] / 2);
+			//  fillRect( x, y, width, height ) // Explanation of the parameters below
+			ctx.fillRect(bar_x, canvas.height, bar_width, bar_height);
+		}
+	}
 	</script>
 
 
-	<!-- button for audio loop -->
-	<!-- Greg_baumont_-_Minimal_french_electro_loop -->
-	Loop
-	<form>
-		<button id="button-loop-1" type="button" value="1" class="dial">1</button>
-		<button id="button-loop-2" type="button" value="2" class="dial">2</button>
-		<button id="button-loop-3" type="button" value="3" class="dial">3</button>
-	</form>
+		<div id="mp3_player">
+		  <div id='audio_box'></div>
+		  <canvas id="analyser_render"></canvas>
+		</div>
 
-	Sound Controls
-	<form>
-		<!-- <input type="text" value="100" class="dial"> -->
-		<button id="button-volume" type="button" form="form" class="dial">Volume</button>
-		<button id="button-play" type="button" form="form" class="dial">Play</button>
-		<button id="button-stop" type="button" form="form" class="dial">Stop</button>
-	</form>
+	<!--  Analyser Bar -->
 
 
-	Effects
-	<form>
-		<button id="button-loop-4" type="button" value="4" class="dial">4</button>
-		<button id="button-loop-5" type="button" value="5" class="dial">5</button>
-		<button id="button-loop-6" type="button" value="6" class="dial">6</button>
-	</form>
 
 
-	<script src="/jquery.knob.min.js"></script>
-	<script src="/main.js"></script>
-	<script src="/jq.knob.js"></script>
+	<!-- spotify -->
+
+	<!-- <div class="container">
+	<h1>Search for an Artist</h1>
+	<p>Type an artist name and click on "Search". Then, click on any album from the results to play 30 seconds of its first track.</p>
+	<form id="search-form">
+	<input type="text" id="query" value="" class="form-control" placeholder="Type an Artist Name"/>
+	<input type="submit" id="search" class="btn btn-primary" value="Search" />
+</form>
+<div id="results"></div>
+</div>
+<script id="results-template" type="text/x-handlebars-template">
+{{#each albums.items}}
+<div style="background-image:url({{images.0.url}})" data-album-id="{{id}}" class="cover"></div>
+{{/each}}
+</script> -->
+
+
+<!-- button for audio loop -->
+<!-- Greg_baumont_-_Minimal_french_electro_loop -->
+Loop
+<form>
+	<button id="button-loop-1" type="button" value="1" class="dial">1</button>
+	<button id="button-loop-2" type="button" value="2" class="dial">2</button>
+	<button id="button-loop-3" type="button" value="3" class="dial">3</button>
+</form>
+
+Sound Controls
+<form>
+	<!-- <input type="text" value="100" class="dial"> -->
+	<button id="button-volume" type="button" form="form" class="dial">Volume</button>
+	<button id="button-play" type="button" form="form" class="dial">Play</button>
+	<button id="button-stop" type="button" form="form" class="dial">Stop</button>
+</form>
+
+
+Effects
+<form>
+	<button id="button-loop-4" type="button" value="4" class="dial">4</button>
+	<button id="button-loop-5" type="button" value="5" class="dial">5</button>
+	<button id="button-loop-6" type="button" value="6" class="dial">6</button>
+</form>
+
+
+<script src="/jquery.knob.min.js"></script>
+<script src="/main.js"></script>
+<script src="/jq.knob.js"></script>
 </body>
 </html>
