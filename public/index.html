@@ -2,20 +2,40 @@
 <html>
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
-		<title>Playing music with Robots</title>
+	<title>Playing music with Robots</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 <body>
 
-<!-- button for audio loop -->
-<!-- Greg_baumont_-_Minimal_french_electro_loop -->
-Loop
-	    <form>
-	        <button id="button-loop-1" type="button" value="1">1</button>
-	        <button id="button-loop-2" type="button" value="2">2</button>
-					<button id="button-loop-3" type="button" value="3">3</button>
-	    </form>
+	<!-- button for audio loop -->
+	<!-- Greg_baumont_-_Minimal_french_electro_loop -->
+	Loop
+	<form>
+		<button id="button-loop-1" type="button" value="1" class="dial">1</button>
+		<button id="button-loop-2" type="button" value="2" class="dial">2</button>
+		<button id="button-loop-3" type="button" value="3" class="dial">3</button>
+	</form>
+
+Sound Controls
+	<form>
+		<!-- <input type="text" value="100" class="dial"> -->
+		<button id="button-volume" type="button" form="form" class="dial">Volume</button>
+		<button id="button-play" type="button" form="form" class="dial">Play</button>
+		<button id="button-stop" type="button" form="form" class="dial">Stop</button>
+	</form>
 
 
+	Effects
+	<form>
+		<button id="button-loop-4" type="button" value="4" class="dial">4</button>
+		<button id="button-loop-5" type="button" value="5" class="dial">5</button>
+		<button id="button-loop-6" type="button" value="6" class="dial">6</button>
+	</form>
+
+
+
+	<script src="/jquery.knob.min.js"></script>
 	<script src="/main.js"></script>
+	<script src="/jq.knob.js"></script>
 </body>
 </html>
