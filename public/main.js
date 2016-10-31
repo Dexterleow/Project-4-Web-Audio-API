@@ -40,7 +40,7 @@
     for (var i = 0; i < fbc_array.length; i++) { //but this doesn't
     /*fill the canvas*/
     x = i * 2;
-    barWidth = 1;
+    barWidth = 2;
     barHeight = -(fbc_array[i] / 1.8);
     realBarHeight = -fbc_array[i]/(256/canvas.height)
     //colours react to the  frequency loudness
