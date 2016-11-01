@@ -115,6 +115,8 @@ onload = function () { //this will be executed when the page is ready
                 e.preventDefault();
                 if (j === 0) {
                   elem.play();
+                  console.log(i);
+                  
                   // dataArray = [{button_id: 3, time_interval: 0}, {button_id: 1, time_interval: 2000}]
                   // dataArray.push({})
                   j ++

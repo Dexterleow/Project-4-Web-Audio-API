@@ -31,8 +31,8 @@ $('#button-loop-1').click(function(e){
   // e.preventDefault();
   if (button1 === 0) {
     button1 ++;
-    console.log(button1);
-    console.log("button1 is pressed");
+    // console.log(button1);
+    // console.log("button1 is pressed");
     $('#button-loop-1').trigger(
       'configure',
       {
@@ -42,8 +42,8 @@ $('#button-loop-1').click(function(e){
     );
   } else {
     button1 --;
-    console.log(button1);
-    console.log("button1 is off");
+    // console.log(button1);
+    // console.log("button1 is off");
     $('#button-loop-1').trigger(
       'configure',
       {
@@ -227,7 +227,7 @@ $('#button-loop-6').click(function(e){
   // e.preventDefault();
   if (button1 === 0) {
     button1 ++;
-    
+
     $('#button-loop-6').trigger(
       'configure',
       {

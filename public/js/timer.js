@@ -5,19 +5,22 @@
   var buttonStart = document.getElementById('button-start');
   var buttonStop = document.getElementById('button-stop');
   var buttonReset = document.getElementById('button-reset');
-  var Interval ;
+  var Interval;
 
   buttonStart.onclick = function () {
 
       clearInterval(Interval);
       Interval = setInterval(startTimer, 50);
+      record();
   }
 
 
 
     buttonStop.onclick = function() {
        clearInterval(Interval);
+       playback(recording);
   }
+
 
 
   buttonReset.onclick = function() {
@@ -43,7 +46,6 @@
     }
 
     if (tens > 99) {
-      console.log("seconds");
       seconds++;
       appendSeconds.innerHTML = "0" + seconds;
       tens = 0;
