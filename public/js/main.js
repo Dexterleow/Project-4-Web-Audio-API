@@ -72,12 +72,6 @@ onload = function () { //this will be executed when the page is ready
     //-----------------------------
 
 
-
-
-
-
-
-
     //-------------------------------
     // Setup Audio Files and Buttons
     //-------------------------------
