@@ -10,6 +10,9 @@ onload = function () { //this will be executed when the page is ready
     files: [
       'synth.wav',
       'beat.wav',
+      'beat.wav',
+      'beat.wav',
+      'beat.wav',
       'synth.wav'
     ],
     proceed: true,
@@ -94,6 +97,11 @@ onload = function () { //this will be executed when the page is ready
         sources[x].connect(analyser); //we connect that to the analyser
         elem.loop = true; // to enable looping of the music
 
+
+
+
+
+
         //attaching to buttons
         var req = new XMLHttpRequest();
         req.open('GET', audio.files[i - 1], true); // array starts with 0 hence the -1
@@ -126,8 +134,11 @@ onload = function () { //this will be executed when the page is ready
               });
             });
           },
-          //attaching to buttons
           req.send();
+
+
+
+
           letsDraw();
         })();
       }
@@ -145,6 +156,10 @@ onload = function () { //this will be executed when the page is ready
         ctx.fillStyle = "white";
         ctx.font = "bold 12px Arial";
         bars = 150;
+
+
+
+        //drawing bars
         for (var i = 0; i < fbc_array.length; i++) { //but this doesn't
         /*fill the canvas*/
         x = i * 2;
@@ -155,8 +170,13 @@ onload = function () { //this will be executed when the page is ready
         hue = parseInt(500 * (1 - (barHeight / 200)), 10);
         ctx.fillStyle = 'hsl(' + hue + ',75%,50%)';
         ctx.fillRect(x, canvas.height, barWidth, realBarHeight);
+
+
+
+
       }
     }
+
 
 
     //attaching to buttons
