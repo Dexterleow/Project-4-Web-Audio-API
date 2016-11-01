@@ -67,7 +67,7 @@ function playback(recording) {
   var tens = 00;
 
   for (i = 0; i < 20; i++) {
-
+//recording length
     if (i == tens) {
     var b = document.getElementById(recording[i].button);
     b.click();
@@ -76,4 +76,11 @@ function playback(recording) {
   }
     tens++
   }
+}
+
+
+function recordReset() {
+  //array of objects
+  //refresh recording
+  recording = [];
 }

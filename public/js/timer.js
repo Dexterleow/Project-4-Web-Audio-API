@@ -3,8 +3,9 @@
   var appendTens = document.getElementById("tens")
   var appendSeconds = document.getElementById("seconds")
   var buttonStart = document.getElementById('button-start');
-  var buttonStop = document.getElementById('button-stop');
+  var buttonFinished = document.getElementById('button-finished');
   var buttonReset = document.getElementById('button-reset');
+  var buttonPlayback = document.getElementById('button-playback');
   var Interval;
 
   buttonStart.onclick = function () {
@@ -16,9 +17,8 @@
 
 
 
-    buttonStop.onclick = function() {
+    buttonFinished.onclick = function() {
        clearInterval(Interval);
-       playback(recording);
   }
 
 
@@ -29,8 +29,12 @@
   	seconds = "00";
     appendTens.innerHTML = tens;
   	appendSeconds.innerHTML = seconds;
+    recordReset();
   }
 
+  buttonPlayback.onclick = function() {
+     playback(recording); //playback recording
+  }
 
 
   function startTimer () {
