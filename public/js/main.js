@@ -13,7 +13,8 @@ onload = function () { //this will be executed when the page is ready
       'beat.wav',
       'beat.wav',
       'beat.wav',
-      'synth.wav'
+      'synth.wav',
+      'beat.wav'
     ],
     proceed: true,
     source_loop: {},
@@ -114,6 +115,8 @@ onload = function () { //this will be executed when the page is ready
                 e.preventDefault();
                 if (j === 0) {
                   elem.play();
+                  // dataArray = [{button_id: 3, time_interval: 0}, {button_id: 1, time_interval: 2000}]
+                  // dataArray.push({})
                   j ++
                 } else {
                   elem.pause();
@@ -249,3 +252,11 @@ onload = function () { //this will be executed when the page is ready
 
   }
 }
+
+// sound controls
+// var volumeBar = document.getElementById("volume-bar");
+// // Event listener for the volume bar
+// volumeBar.addEventListener("change", function() {
+//   // Update the video volume
+//   video.volume = volumeBar.value;
+// });

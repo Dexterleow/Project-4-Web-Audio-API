@@ -2,9 +2,12 @@
 <p>Welcome to your dashboard</p>
 
 dasdsadsa
-<!-- <canvas id="c"></canvas> -->
+<canvas id="c"></canvas>
 
 <div class="container">
+
+
+
 
   <div class="row">
     <div class="col-md-4 musicControls">
@@ -20,9 +23,23 @@ dasdsadsa
     <div class="col-md-4 musicControls">
       Volume Controls
       <form>
-        <button id="button-control-1" type="button" value="4">control 1</button>
-        <button id="button-control-2" type="button" value="5">control 2</button>
-        <button id="button-control-3" type="button" value="6">control 3</button>
+        <div>
+          <!-- <button id="button-control-1" type="button" value="4">volume</button> -->
+          <input type="range" id="volume-bar" min="0" max="1" step="0.1" value="1">
+        </div>
+        <div>
+
+          <!-- clock -->
+          <div class="clock">
+            <h2>Clock</h2>
+            <p><span id="seconds">00</span>:<span id="tens">00</span></p>
+            <button type="button" id="button-start">Start</button>
+            <button type="button" id="button-stop">Stop</button>
+            <button type="button" id="button-reset">Reset</button>
+            <button type="button" id="button-upload">Upload to Mixtapes Board</button>
+          </div>
+
+        </div>
       </form>
     </div>
 
@@ -36,6 +53,21 @@ dasdsadsa
     </div>
 
   </div>
+
+  <br>
+  <!-- buttons for music artworks -->
+  <button id="button-loop-7" type="button"></button>
+  <button id="button-loop-8" type="button"></button>
+  <button id="button-loop-9" type="button"></button>
+  <button id="button-loop-10" type="button"></button>
+  <button id="button-loop-11" type="button"></button>
+  <button id="button-loop-12" type="button"></button>
+  <button id="button-loop-13" type="button"></button>
+  <button id="button-loop-14" type="button"></button>
+  <button id="button-loop-15" type="button"></button>
+
+  <br>
+  <br>
 
   <div class="row">
     <div class="col-md-6 mainTitle">

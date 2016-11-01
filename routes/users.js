@@ -15,6 +15,11 @@ router.get('/login', function(req, res){
 	res.render('login');
 });
 
+// Mixtapes
+router.get('/mixtapes', function(req, res){
+	res.render('mixtapes');
+});
+
 // Register User
 router.post('/register', function(req, res){
 	var name = req.body.name;

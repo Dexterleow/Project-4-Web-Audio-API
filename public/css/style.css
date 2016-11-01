@@ -124,3 +124,103 @@ footer{
     color: yellow;
     background-color: yellow;
 }*/
+
+#button-loop-7 {
+  background-image: url(../img/michaeljackson.jpg);
+  /*background-repeat: no-repeat;
+  background-position: 50% 50%;*/
+  /* put the height and width of your image here */
+  height: 120px;
+  width: 120px;
+  background-size: contain;
+  border: none;
+  /*outline:none;*/
+}
+
+#button-loop-8 {
+  background-image: url(../img/michaeljackson.jpg);
+  /*background-repeat: no-repeat;
+  background-position: 50% 50%;*/
+  /* put the height and width of your image here */
+  height: 120px;
+  width: 120px;
+  background-size: contain;
+  border: none;
+}
+
+#button-loop-9 {
+  background-image: url(../img/michaeljackson.jpg);
+  /*background-repeat: no-repeat;
+  background-position: 50% 50%;*/
+  /* put the height and width of your image here */
+  height: 120px;
+  width: 120px;
+  background-size: contain;
+  border: none;
+}
+
+#button-loop-10 {
+  background-image: url(../img/michaeljackson.jpg);
+  /*background-repeat: no-repeat;
+  background-position: 50% 50%;*/
+  /* put the height and width of your image here */
+  height: 120px;
+  width: 120px;
+  background-size: contain;
+  border: none;
+}
+
+#button-loop-11 {
+  background-image: url(../img/michaeljackson.jpg);
+  /*background-repeat: no-repeat;
+  background-position: 50% 50%;*/
+  /* put the height and width of your image here */
+  height: 120px;
+  width: 120px;
+  background-size: contain;
+  border: none;
+}
+
+#button-loop-12 {
+  background-image: url(../img/michaeljackson.jpg);
+  /*background-repeat: no-repeat;
+  background-position: 50% 50%;*/
+  /* put the height and width of your image here */
+  height: 120px;
+  width: 120px;
+  background-size: contain;
+  border: none;
+}
+
+#button-loop-13 {
+  background-image: url(../img/michaeljackson.jpg);
+  /*background-repeat: no-repeat;
+  background-position: 50% 50%;*/
+  /* put the height and width of your image here */
+  height: 120px;
+  width: 120px;
+  background-size: contain;
+  border: none;
+}
+
+#button-loop-14 {
+  background-image: url(../img/michaeljackson.jpg);
+  /*background-repeat: no-repeat;
+  background-position: 50% 50%;*/
+  /* put the height and width of your image here */
+  height: 120px;
+  width: 120px;
+  background-size: contain;
+  border: none;
+}
+
+#button-loop-15 {
+  background-image: url(../img/michaeljackson.jpg);
+  /*background-repeat: no-repeat;
+  background-position: 50% 50%;*/
+  /* put the height and width of your image here */
+  height: 120px;
+  width: 120px;
+  background-size: contain;
+  border: none;
+}
