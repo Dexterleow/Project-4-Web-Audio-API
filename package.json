@@ -1,12 +1,27 @@
 {
-  "name": "playing-music-with-bot",
+  "name": "loginapp",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "login_authentication_system",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dexterleow",
+  "license": "ISC",
   "dependencies": {
-    "ejs": "^2.5.2",
-    "express": "^4.14.0",
-    "handlebars": "^4.0.5",
-    "jquery": "^3.1.1"
-  }
+  "bcryptjs": "*",
+  "body-parser": "*",
+  "connect-flash": "*",
+  "cookie-parser": "^1.4.1",
+  "express": "*",
+  "express-handlebars": "*",
+  "express-messages": "*",
+  "express-session": "*",
+  "express-validator": "*",
+  "mongodb": "*",
+  "mongoose": "*",
+  "passport": "*",
+  "passport-http": "*",
+  "passport-local": "*"
+}
 }
