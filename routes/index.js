@@ -1,10 +1,24 @@
 var express = require('express');
 var router = express.Router();
+var RecordingTape = require('../models/recordingtape');
 
 // Get Homepage
 router.get('/', ensureAuthenticated, function(req, res){
 	res.render('index');
 });
+
+router.post('/recordnew', ensureAuthenticated, function(req,res){
+	console.log(req.body);
+	RecordingTape.create({
+    username: res.locals.user.username,
+		recording: req.body
+    // recording: recording
+  }, function(err, record) {
+    if (err) console.log(err);
+    console.log("recorded", record);
+		res.render('index', {record: record})
+  });
+})
 
 function ensureAuthenticated(req, res, next){
 	if(req.isAuthenticated()){

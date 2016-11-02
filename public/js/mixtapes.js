@@ -23,26 +23,16 @@ var recording = [];
 var checkRecord = false;
 var triggered = [];
 
+
 function record() {
   //array of objects
   //refresh recording
-  checkRecord = true;
-  // if (checkRecord = false) {
-  recording = [];
   //while recording is live (set cancelling conditions)
+  checkRecord = true;
+  recording = [];
   console.log(recording);
   listenAllbuttons();
 
-// } else {
-//   console.log("recording is done");
-// }
-
-  //Stop events
-  //If reset
-  //recording will remove
-
-  //if stop recording will not append and upload.
-  //remove upload
 
 }
 
@@ -53,8 +43,11 @@ function recordFinished(){
     $(buttonClicked).trigger("click");
   })
   triggered = [];
+  //INSERT AJAX POST TO /recordnew
+  $.post("/recordnew", {recording: recording});
+  console.log(recording);
   console.log("Stopeed");
-// checkRecord = true;
+// push to database
 }
 
 
