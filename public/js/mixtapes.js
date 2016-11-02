@@ -99,3 +99,7 @@ function recordReset() {
   recording = [];
   checkRecord = false;
 }
+
+$.get('/', function(tapes) {
+  console.log(tapes)
+})
