@@ -17,6 +17,7 @@ $(function () {
   $('#button-loop-1').knob({
     min: '10',
     max: '10',
+    skin:"tron",
     width:'100',
     height:'100',
     thickness: '0.1',
@@ -37,6 +38,7 @@ $('#button-loop-1').click(function(e){
       'configure',
       {
         fgColor:"#001",
+          skin:"tron",
         bgColor:"#001" //border of circle
       }
     );
@@ -48,6 +50,7 @@ $('#button-loop-1').click(function(e){
       'configure',
       {
         fgColor:"#f00",
+        skin:"tron",
         bgColor:"#ffef7c" //border of circle
       }
     );
@@ -66,6 +69,7 @@ $(function () {
     fgColor: '#f00',
     bgColor:'#f00',
     background: '#ccc000',
+    skin:"tron",
     readOnly: true
   });
 var button1 = 0;

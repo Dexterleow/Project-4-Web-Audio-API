@@ -1,24 +1,4 @@
-// start button to start time and record array
-// function that will listen to all button-loop to object
 
-// dataArray = [{button_id: 3, time_interval: 0}, {button_id: 1, time_interval: 2000}, {button_id: 2, time_interval: 5000}]
-
-// function playback () {
-//   for (var i = 0; i < dataArray.length; i++) {
-//     setTimeout(play(dataArray[i].button_id), dataArray[i].time_interval)
-//   }
-// }
-
-
-// two elements when clicked, button and time interval
-// push to array
-
-//Concept for function record
-//On Start
-//1. create new record object/array
-//2. listen to buttons events
-//3. on events append events to object/array
-//4. on stop/reset/max duration stop append and close object/array and send to db
 var recording = [];
 var checkRecord = false;
 var triggered = [];
@@ -100,6 +80,9 @@ function recordReset() {
   checkRecord = false;
 }
 
+
 $.get('/', function(tapes) {
   console.log(tapes)
 })
+
+// To obtain the data from the server after the document has been rendered by the browser.

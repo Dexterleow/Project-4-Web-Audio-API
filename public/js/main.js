@@ -10,9 +10,9 @@ onload = function () { //this will be executed when the page is ready
     files: [
       'synth.wav',
       'beat.wav',
-      'beat.wav',
-      'beat.wav',
-      'beat.wav',
+      'sax.wav',
+      'bass.wav',
+      'clav.wav',
       'synth.wav',
       'beat.wav'
     ],
@@ -91,11 +91,6 @@ onload = function () { //this will be executed when the page is ready
         document.body.appendChild(elem); //now we add that element to the body
         sources[x] = context.createMediaElementSource(elem); //we create a mediasource for it
         sources[x].connect(analyser); //we connect that to the analyser
-
-
-
-
-
 
         //attaching to buttons
         var req = new XMLHttpRequest();

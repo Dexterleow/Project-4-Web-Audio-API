@@ -7,9 +7,6 @@
 
 <div class="container">
 
-
-
-
   <div class="row">
     <div class="col-md-4 musicControls">
       Loops
@@ -32,7 +29,7 @@
 
           <!-- clock -->
           <div class="clock">
-            <h2>Clock</h2>
+            <h2>Record Your Jam!</h2>
             <p><span id="seconds">00</span>:<span id="tens">00</span></p>
             <button type="button" id="button-start">Start Recording</button>
             <button type="button" id="button-finished">Finished Recording</button>
@@ -84,13 +81,36 @@
 
   <div id="users_mixtapes">
     <div>
-    {{ tapes }}
-  </div>
-    Append users' playlists below.
+      {{ tapes }}
+    </div>
 
-    GET RECORDING
 
 
   </div>
+
+</div>
+
+
+
+<div class="container">
+       {{#each tapes}}
+
+  <div class="well">
+
+    <br>
+    <div>
+    <h3>  User: {{ username }} </h3>
+    </div>
+        <div>
+    <small> Recording: {{ recording }}</small>
+  </div>
+    <div>
+      <a href="" class="btn btn-info glyphicon glyphicon-edit"></a>
+      <a href="" class="btn btn-danger 	glyphicon glyphicon-heart"></a>
+      <a href="" class="btn btn-success glyphicon glyphicon-play-circle"></a>
+    </div>
+  </div>
+
+        {{/each}}
 
 </div>
