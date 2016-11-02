@@ -27,6 +27,7 @@
 
   buttonReset.onclick = function() {
      clearInterval(Interval);
+     realtime = 0;
     tens = "00";
   	seconds = "00";
     appendTens.innerHTML = tens;

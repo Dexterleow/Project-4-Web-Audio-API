@@ -1,12 +1,17 @@
 var express = require('express');
 var router = express.Router();
 var RecordingTape = require('../models/recordingtape');
+var test = "Hello";
 
 // Get Homepage
 router.get('/', ensureAuthenticated, function(req, res){
 	RecordingTape.find().exec(function(err, tapes) {
+		//console.log(tapes);
+		// tapes = tapes;
 		console.log(tapes);
-		res.render('index', {tapes: tapes});
+		var mixtapes = JSON.stringify(tapes)
+		res.render('index', {tapes: tapes, mixtapes: mixtapes});
+
 	})
 	// res.render('index');
 });
