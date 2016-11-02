@@ -19,6 +19,8 @@
 
     buttonFinished.onclick = function() {
        clearInterval(Interval);
+       recordFinished();
+       console.log("finsihed si working");
   }
 
 

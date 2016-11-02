@@ -86,11 +86,11 @@ onload = function () { //this will be executed when the page is ready
 
         var elem = document.createElement('audio'); //we create an audio element
         elem.src = audio.files[x]; //we append the specific source to it.
+        elem.loop = true; // to enable looping of the music
         //elem.setAttribute('controls', ''); //we set the controls option, so you have the play/pause etc buttons enabled
         document.body.appendChild(elem); //now we add that element to the body
         sources[x] = context.createMediaElementSource(elem); //we create a mediasource for it
         sources[x].connect(analyser); //we connect that to the analyser
-        elem.loop = true; // to enable looping of the music
 
 
 
@@ -116,7 +116,7 @@ onload = function () { //this will be executed when the page is ready
                 if (j === 0) {
                   elem.play();
                   console.log(i);
-                  
+
                   // dataArray = [{button_id: 3, time_interval: 0}, {button_id: 1, time_interval: 2000}]
                   // dataArray.push({})
                   j ++
@@ -124,6 +124,8 @@ onload = function () { //this will be executed when the page is ready
                   elem.pause();
                   j --
                 }
+
+
                 // //elem.setAttribute('controls', ''); //we set the controls option, so you have the play/pause etc buttons enabled
                 // document.body.appendChild(elem); //now we add that element to the body
                 // sources[i] = context.createMediaElementSource(elem); //we create a mediasource for it

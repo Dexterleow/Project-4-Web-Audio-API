@@ -1,7 +1,7 @@
 // start button to start time and record array
 // function that will listen to all button-loop to object
 
-dataArray = [{button_id: 3, time_interval: 0}, {button_id: 1, time_interval: 2000}, {button_id: 2, time_interval: 5000}]
+// dataArray = [{button_id: 3, time_interval: 0}, {button_id: 1, time_interval: 2000}, {button_id: 2, time_interval: 5000}]
 
 // function playback () {
 //   for (var i = 0; i < dataArray.length; i++) {
@@ -20,13 +20,22 @@ dataArray = [{button_id: 3, time_interval: 0}, {button_id: 1, time_interval: 200
 //3. on events append events to object/array
 //4. on stop/reset/max duration stop append and close object/array and send to db
 var recording = [];
+var checkRecord = false;
+var triggered = [];
 
 function record() {
   //array of objects
   //refresh recording
+  checkRecord = true;
+  // if (checkRecord = false) {
   recording = [];
   //while recording is live (set cancelling conditions)
+  console.log(recording);
   listenAllbuttons();
+
+// } else {
+//   console.log("recording is done");
+// }
 
   //Stop events
   //If reset
@@ -35,6 +44,17 @@ function record() {
   //if stop recording will not append and upload.
   //remove upload
 
+}
+
+function recordFinished(){
+  checkRecord = false;
+  triggered.forEach(function(button){
+    var buttonClicked = document.getElementById(button);
+    $(buttonClicked).trigger("click");
+  })
+  triggered = [];
+  console.log("Stopeed");
+// checkRecord = true;
 }
 
 
@@ -50,17 +70,19 @@ function listenAllbuttons() {
 
 function AppendAction(e) {
     var buttonClicked = e.srcElement.id
+    triggered.push(buttonClicked);
 
     //case statements
     var action = {button:buttonClicked, time:tens};
-    recording.push(action);
+    if(checkRecord){
+      recording.push(action);
+    }
 
     e.stopPropagation();
 }
 
 //Concepts:
 //given a recording array, reproduce the actions
-
 
 function playback(recording) {
 
@@ -78,9 +100,9 @@ function playback(recording) {
   }
 }
 
-
 function recordReset() {
   //array of objects
   //refresh recording
   recording = [];
+  checkRecord = false;
 }
