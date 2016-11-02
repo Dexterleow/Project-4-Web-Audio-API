@@ -13,8 +13,16 @@ onload = function () { //this will be executed when the page is ready
       'sax.wav',
       'bass.wav',
       'clav.wav',
-      'synth.wav',
-      'beat.wav'
+      'guitar.mp3',
+      'mj_thriller.m4a',
+      'beatles_love_me_do.mp3',
+      'basement_jaxx_WheresYourHeadAt.mp3',
+      'BEE_GEES_How_Deep_Is_Your_Love.m4a',
+      'bic_runga_sway.mp3',
+      'birdy_people_help_the_people.mp3',
+      'lana_del_rey_blue_jeans.mp3',
+      'dillon_thirteen_thirtyfive.mp3',
+      'make_the_girl_dance_kill_me.mp3'
     ],
     proceed: true,
     source_loop: {},
