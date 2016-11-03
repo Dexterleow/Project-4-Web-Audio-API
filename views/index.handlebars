@@ -1,124 +1,137 @@
-<h1 class="page-header">Music Board</h2>
-<!-- <p>Welcome to your Music Board</p> -->
-
-
-
-<canvas id="c"></canvas>
-
-<div class="container">
-
-  <div class="row">
-    <div class="col-md-4 musicControls">
-      Loops
-      <form>
-        <button id="button-loop-1" type="button" class="dial recordable" value="10">synth</button>
-        <button id="button-loop-2" type="button" class="dial recordable" value="10">beat</button>
-        <button id="button-loop-3" type="button" class="dial recordable" value="10">sax</button>
-      </form>
-    </div>
-
-
-    <div class="col-md-4 musicControls">
-      Volume Controls
-      <form>
-        <div>
-          <!-- <button id="button-control-1" type="button" value="4">volume</button> -->
-          <input type="range" id="volume-bar" min="0" max="1" step="0.1" value="1">
-        </div>
-        <div>
-
-          <!-- clock -->
-          <div class="clock">
-            <h2>Record Your Jam!</h2>
-            <p><span id="seconds">00</span>:<span id="tens">00</span></p>
-            <button type="button" id="button-start">Start Recording</button>
-            <button type="button" id="button-finished">Finished Recording</button>
-            <button type="button" id="button-reset">Reset Recording</button>
-            <button type="button" id="button-playback">Playback</button>
-            <button type="button" id="button-stop">Stop</button>
-          </div>
-
-        </div>
-      </form>
-    </div>
-
-    <div class="col-md-4 musicControls">
-      Effects
-      <form>
-        <button id="button-loop-4" type="button" class="dial recordable" value="10">bass</button>
-        <button id="button-loop-5" type="button" class="dial recordable" value="10">clav</button>
-        <button id="button-loop-6" type="button" class="dial recordable" value="10">guitar</button>
-      </form>
-    </div>
-
-  </div>
-
-  <br>
-
-  <!-- buttons for music artworks -->
-  <button id="button-loop-7" type="button" class="recordable albumbutton"></button>
-  <button id="button-loop-8" type="button" class="recordable albumbutton"></button>
-  <button id="button-loop-9" type="button" class="recordable albumbutton"></button>
-  <button id="button-loop-10" type="button" class="recordable albumbutton"></button>
-  <button id="button-loop-11" type="button" class="recordable albumbutton"></button>
-  <button id="button-loop-12" type="button" class="recordable albumbutton"></button>
-  <button id="button-loop-13" type="button" class="recordable albumbutton"></button>
-  <button id="button-loop-14" type="button" class="recordable albumbutton"></button>
-  <button id="button-loop-15" type="button" class="recordable albumbutton"></button>
-
-  <br>
-  <br>
-
-  <div class="row">
-    <div class="col-md-6 mainTitle">
-      Twitter
-      <!-- <img src="img/twitterimg.png" alt="HTML5 Icon"> -->
-    </div>
-
-    <div class="col-md-6 mainTitle">
-      Youtube page
-    </div>
-
-  </div>
-
-  <div id="users_mixtapes">
-
-      <!-- {{ tapes }} -->
-
-  </div>
-
+  <div class="container">
+<h1 class="page-header">Music Board: {{ user.name }}</h2>
 </div>
+  <!-- <p>Welcome to your Music Board</p> -->
 
-  <br>
 
-<div class="container">
-       {{#each tapes}}
 
-  <div class="well col-md-3 cassette">
+  <canvas id="c"></canvas>
+
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-4 musicControls">
+        <div class="beatControls">
+        Loops
+      </div>
+        <br>
+
+        <form>
+          <button id="button-loop-1" type="button" class="dial recordable" value="10">synth</button>
+          <button id="button-loop-2" type="button" class="dial recordable" value="10">beat</button>
+          <button id="button-loop-3" type="button" class="dial recordable" value="10">sax</button>
+        </form>
+      </div>
+
+
+      <div class="col-md-4 musicControls">
+
+
+        <!-- clock -->
+        <div class="clock">
+          Volume Control
+          <form>
+            <div>
+              <input type="range" id="volume-bar" min="0" max="1" step="0.1" value="1">
+            </div>
+            <div>
+              <h2>Record Your Jam!</h2>
+              <p><span id="seconds">00</span>:<span id="tens">00</span></p>
+              <button type="button" class="btn btn-default" id="button-start">Start Recording</button>
+              <button type="button" class="btn btn-default" id="button-finished">Finished Recording</button>
+              <button type="button" class="btn btn-default" id="button-reset">Reset Recording</button>
+              <button type="button" class="btn btn-default" id="button-playback">Playback</button>
+              <button type="button" class="btn btn-default" id="button-stop">Stop</button>
+            </div>
+
+          </div>
+        </form>
+      </div>
+
+      <div class="col-md-4 musicControls">
+          <div class="beatControls">
+        Effects
+      </div>
+        <br>
+
+
+        <form>
+          <button id="button-loop-4" type="button" class="dial recordable" value="10">bass</button>
+          <button id="button-loop-5" type="button" class="dial recordable" value="10">clav</button>
+          <button id="button-loop-6" type="button" class="dial recordable" value="10">guitar</button>
+        </form>
+      </div>
+
+    </div>
 
     <br>
-    <div class="username_font">
-    <h3>  User: {{ username }} </h3>
+
+    <!-- buttons for music artworks -->
+    <button id="button-loop-7" type="button" class="recordable albumbutton"></button>
+    <button id="button-loop-8" type="button" class="recordable albumbutton"></button>
+    <button id="button-loop-9" type="button" class="recordable albumbutton"></button>
+    <button id="button-loop-10" type="button" class="recordable albumbutton"></button>
+    <button id="button-loop-11" type="button" class="recordable albumbutton"></button>
+    <button id="button-loop-12" type="button" class="recordable albumbutton"></button>
+    <button id="button-loop-13" type="button" class="recordable albumbutton"></button>
+    <button id="button-loop-14" type="button" class="recordable albumbutton"></button>
+    <button id="button-loop-15" type="button" class="recordable albumbutton"></button>
+
+    <br>
+    <br>
+
+    <div class="row">
+      <div class="col-md-6 mainTitle twitter_img">
+
+        <!-- <img src="img/twitterimg.png" alt="HTML5 Icon"> -->
+      </div>
+
+      <div class="col-md-6 mainTitle youtube_img">
+
+      </div>
+
     </div>
-        <div>
-    <small> Recording: {{ recording }}</small>
+
+
+
   </div>
-    <div>
-      <a id="{{ _id }}" class="btn btn-success glyphicon glyphicon-play-circle playButton buttoncolor"></a>
-      <a class="btn btn-info glyphicon glyphicon-heart buttoncolor"></a>
+
+  <br>
+
+  <div class="container">
+    {{#each tapes}}
+
+    <div class="well col-md-3 cassette">
+
+      <br>
+      <div class="username_font">
+        <h3>  User: {{ username }} </h3>
+      </div>
+      <div>
+        <small> Recording: {{ recording }}</small>
+      </div>
+      <div>
+        <a id="{{ _id }}" class="btn btn-success glyphicon glyphicon-play-circle playButton buttoncolor"></a>
+        <a class="btn btn-info glyphicon glyphicon-heart buttoncolor"></a>
         {{#isOwner username }}
         <!-- username == recordingtapes.username -->
-      <a id="{{ _id }}" class="btn btn-danger glyphicon glyphicon-trash delete-btn buttoncolor"></a>
+        <a id="{{ _id }}" class="btn btn-danger glyphicon glyphicon-trash delete-btn buttoncolor"></a>
         {{/isOwner}}
+      </div>
     </div>
+
+    {{/each}}
+    <!-- if user.name == recordingtapes.username -->
   </div>
 
-        {{/each}}
-      <!-- if user.name == recordingtapes.username -->
-</div>
+  <footer class="footer">
+    <div class="container footer-tag">
+      <p>2016 JSONG.</p>
+    </div>
+  </footer>
 
-<script>
-var tapes = {{{ mixtapes }}};
+  <script>
+  var tapes = {{{ mixtapes }}};
 
 
-</script>
+  </script>

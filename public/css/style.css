@@ -1,5 +1,4 @@
 
-
 /*music css*/
 audio {
   display:block;
@@ -13,30 +12,60 @@ elem {
 }
 
 body {
-  /*background-color: #f4f1f2;
-  /*background-color: #729cdb;*/
 background-color: #ffffff;
 font-family: 'Merriweather', serif;
 padding-top: 20px;
 padding-bottom: 20px;
 }
 
-.main-section{
-  font-size: 30px;
-  color:white;
-  border:10px;
+.musicControls{
+    text-align: center;
 }
+
+  .beatControls{
+    font-size:16px;
+  }
 
 .main_header{
   font-size: 90px;
   color:white;
-   -webkit-text-stroke: 2px black;
 }
 
-.mainTitle{
-  background-color: white;
-  border: 2px solid red;
+.youtube_img{
+  background-color: #e32b21;
+  border: 1px solid black;
   height: 200px;
+  background-image: url(../img/youtube_img2.jpg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  align-items: center;
+  align-content: center;
+  margin-left: auto;
+    margin-right: auto;
+}
+
+.twitter_img{
+  background-color: #57aced;
+    border: 1px solid black;
+  height: 200px;
+  background-image: url(../img/twitter_img.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  align-items: center;
+  align-content: center;
+  margin-left: auto;
+    margin-right: auto;
+}
+
+.clock{
+  text-align: center;
+    /*border: 2px solid black;*/
+}
+
+#seconds{
+  font-size: 14px;
 }
 
 #c{
@@ -45,11 +74,19 @@ background-color: #ffffff;
   height: 450px;
 }
 
-.top_panel{
+/*.top_panel{*/
     /*background-image: url(../img/fast_food.jpg);*/
-    background-color: #1dafc3;
-    height:150px;
-    background-size: contain;
+    /*background-color: #3598db;
+    height:150px;*/
+    /*background-size: contain;
+    padding: 10px;*/
+    /*margin-bottom: 50px;
+    font: white;
+    font-size: 24px;
+}*/
+
+.footer-tag{
+    color:white;
 }
 
 /* Make the masthead heading the same height as the navigation */
@@ -62,14 +99,10 @@ background-color: #ffffff;
 /* Custom page footer */
 .footer {
   padding-top: 19px;
-  background-color: #1dafc3;
+    background-color: #3598db;
   border-top: 1px solid #e5e5e5;
   height:200px;
 }
-
-/*footer{
-  margin-top:40px;
-}*/
 
 .cassette {
     background-image: url(../img/yellow_casset.jpeg);
@@ -84,6 +117,24 @@ background-color: #ffffff;
 
 .buttoncolor{
   border: 1px solid;
+}
+
+.main-section{
+  font-size: 16px;
+  color: white !important;
+}
+
+#JSONG{
+  font-size: 48px;
+  color: white !important;
+}
+
+.top_navbar{
+    background-color: #3598db;
+    color: white !important;
+    padding-bottom:10px;
+    margin-bottom: 6px;
+    margin-top: 0px;
 }
 
 
