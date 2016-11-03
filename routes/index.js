@@ -43,20 +43,20 @@ router.post('/recordnew', ensureAuthenticated, function(req,res){
 
 console.log("A");
 
-// // Check if user is real
-// function isUsersReal (req, project4webaudio) {
-// 		console.log("checking user");
+// Check if user is real
+function isUsersReal (req, project4webaudio) {
+		console.log("checking user");
+
+	if (req.user.name !== project4webaudio.username) {
+
+		console.log("Invalid User");
+		res.json({ message: 'FAILED' });
+		return false
+	}
+	return true
+}
 //
-// 	if (req.user.name !== project4webaudio.username) {
-//
-// 		console.log("Invalid User");
-// 		res.json({ message: 'FAILED' });
-// 		return false
-// 	}
-// 	return true
-// }
-//
-// isUsersReal();
+
 
 
 // Delete a record
@@ -67,11 +67,12 @@ router.delete('/record/:id', ensureAuthenticated, function(req, res) {
 			if (!isUsersReal(req,webaudio)) return
 			console.log("server delete post");
 			RecordingTape.remove({
-				id: req.params.id
+				_id: req.params.id //mongoose way of selecting the id
 			}, function(err, tape) {
 				if (err)
 				res.send(err);
 				res.json({ message: 'Successfully deleted' });
+				console.log("Post has been successfully deleted");
 			});
 		} else {
 			console.log("Invalid Record");

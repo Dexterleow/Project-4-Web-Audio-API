@@ -155,15 +155,19 @@ $(function () {
 //button-loop-4
 $(function () {
   $('#button-loop-4').knob({
-    min: '10',
-    max: '10',
-    width:'100',
-    height:'100',
-    thickness: '0.1',
-    fgColor: '#f00',
-    bgColor:'#f00',
-    background: '#ccc000',
-    readOnly: true
+    'min':10,
+    'max':10,
+    'readOnly': true,
+    'width': 110,
+    'height': 110,
+    'fgColor': 'black', //font color
+    'bgColor': '#b0d5f4', // color of border
+    'thickness': 0.2,
+    // 'tickColorizeValues': true,
+    'skin':'tron',
+    'draw': function() {
+    $(this.i).css('outline', 'none').css('font-size', '16pt');
+    }
   });
   var button1 = 0;
   $('#button-loop-4').click(function(e){
@@ -174,7 +178,8 @@ $(function () {
         'configure',
         {
           fgColor:"#001",
-          bgColor:"#001"
+          skin:"tron",
+          bgColor:"#45a4f6" //border of circle
         }
       );
     } else {
@@ -183,7 +188,8 @@ $(function () {
         'configure',
         {
           fgColor:"#f00",
-          bgColor:"#FF0000"
+          skin:"tron",
+          bgColor:"#b0d5f4" //border of circle
         }
       );
     }
@@ -193,15 +199,19 @@ $(function () {
 //button-loop-5
 $(function () {
   $('#button-loop-5').knob({
-    min: '10',
-    max: '10',
-    width:'100',
-    height:'100',
-    thickness: '0.1',
-    fgColor: '#f00',
-    bgColor:'#f00',
-    background: '#ccc000',
-    readOnly: true
+    'min':10,
+    'max':10,
+    'readOnly': true,
+    'width': 110,
+    'height': 110,
+    'fgColor': 'black', //font color
+    'bgColor': '#b0d5f4', // color of border
+    'thickness': 0.2,
+    // 'tickColorizeValues': true,
+    'skin':'tron',
+    'draw': function() {
+    $(this.i).css('outline', 'none').css('font-size', '16pt');
+    }
   });
   var button1 = 0;
   $('#button-loop-5').click(function(e){
@@ -212,7 +222,8 @@ $(function () {
         'configure',
         {
           fgColor:"#001",
-          bgColor:"#001"
+          skin:"tron",
+          bgColor:"#45a4f6" //border of circle
         }
       );
     } else {
@@ -221,7 +232,8 @@ $(function () {
         'configure',
         {
           fgColor:"#f00",
-          bgColor:"#FF0000"
+          skin:"tron",
+          bgColor:"#b0d5f4" //border of circle
         }
       );
     }
@@ -231,16 +243,19 @@ $(function () {
 //button-loop-6
 $(function () {
   $('#button-loop-6').knob({
-    min: '10',
-    max: '10',
-    width:'100',
-    height:'100',
-    thickness: '0.1',
-    fgColor: '#f00',
-    bgColor:'#f00',
-    background: '#ccc000',
-    // skin:"tron",
-    readOnly: true
+    'min':10,
+    'max':10,
+    'readOnly': true,
+    'width': 110,
+    'height': 110,
+    'fgColor': 'black', //font color
+    'bgColor': '#b0d5f4', // color of border
+    'thickness': 0.2,
+    // 'tickColorizeValues': true,
+    'skin':'tron',
+    'draw': function() {
+    $(this.i).css('outline', 'none').css('font-size', '16pt');
+    }
   });
   var button1 = 0;
   $('#button-loop-6').click(function(e){
@@ -252,7 +267,8 @@ $(function () {
         'configure',
         {
           fgColor:"#001",
-          bgColor:"#001"
+          skin:"tron",
+          bgColor:"#45a4f6" //border of circle
         }
       );
     } else {
@@ -261,9 +277,44 @@ $(function () {
         'configure',
         {
           fgColor:"#f00",
-          bgColor:"#FF0000"
+          skin:"tron",
+          bgColor:"#b0d5f4" //border of circle
         }
       );
     }
   });
 });
+
+
+
+
+
+// $(function () {
+//   $('.albumbutton');
+//   var button1 = 0;
+//   $('.albumbutton').click(function(e){
+//     // e.preventDefault();
+//     if (button1 === 0) {
+//       button1 ++;
+//
+//       $('.albumbutton').trigger(
+//         'configure',
+//         {
+//           fgColor:"#001",
+//           skin:"tron",
+//           bgColor:"#45a4f6" //border of circle
+//         }
+//       );
+//     } else {
+//       button1 --;
+//       $('.albumbutton').trigger(
+//         'configure',
+//         {
+//           fgColor:"#f00",
+//           skin:"tron",
+//           bgColor:"#b0d5f4" //border of circle
+//         }
+//       );
+//     }
+//   });
+// });
