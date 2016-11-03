@@ -19,7 +19,15 @@ router.get('/', ensureAuthenticated, function(req, res){
 		// tapes = tapes;
 		console.log(tapes);
 		var mixtapes = JSON.stringify(tapes)
-		res.render('index', {tapes: tapes, mixtapes: mixtapes});
+		res.render('index', {tapes: tapes, mixtapes: mixtapes, user: req.user,helpers:{
+		isOwner: function(conditional, options) {
+			  if (req.user.username === conditional) {
+			    return options.fn(this)
+			  } else {
+			    return options.inverse(this);
+			  }
+			}
+		}});
 
 	})
 	// res.render('index');
@@ -41,7 +49,7 @@ router.post('/recordnew', ensureAuthenticated, function(req,res){
 })
 
 
-console.log("A");
+
 
 // Check if user is real
 function isUsersReal (req, project4webaudio) {

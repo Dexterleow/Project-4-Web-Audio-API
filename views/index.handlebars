@@ -106,14 +106,19 @@
     <div>
       <a id="{{ _id }}" class="btn btn-success glyphicon glyphicon-play-circle playButton"></a>
       <a class="btn btn-info glyphicon glyphicon-heart"></a>
+        {{#isOwner username }}
+        <!-- username == recordingtapes.username -->
       <a id="{{ _id }}" class="btn btn-danger glyphicon glyphicon-trash delete-btn"></a>
+        {{/isOwner}}
     </div>
   </div>
 
         {{/each}}
-
+      <!-- if user.name == recordingtapes.username -->
 </div>
 
 <script>
 var tapes = {{{ mixtapes }}};
+
+
 </script>
