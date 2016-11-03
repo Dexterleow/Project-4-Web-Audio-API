@@ -78,10 +78,8 @@ function Matchtape(event) {
   for (var i = 0; i < tapes.length; i++) {
     if (tapes[i]._id === id) {
       var recording = parseRecording(tapes[i].recording[0])
-
       console.log(recording);
       playback(recording);
-
     } else {
       console.log("help")
     }
@@ -115,3 +113,23 @@ function playMixtapes() {
 }
 playMixtapes();
 // To obtain the data from the server after the document has been rendered by the browser.
+
+
+
+// Delete mixtape
+$(function() { $('.delete-btn').click(function(e) {
+  console.log("able to match delete-btn");
+    e.preventDefault();
+    // var url = $(this).attr('href');
+    var url = "/record/" + $(this).attr('id');
+    console.log("HELOOOSAS");
+    $.ajax({
+      url: url,
+      method: 'DELETE'
+    }).done(function() {
+        console.log("able to match delete-btn2");
+      window.location.href = '/';
+
+    });
+  });
+  });

@@ -3,6 +3,15 @@ var router = express.Router();
 var RecordingTape = require('../models/recordingtape');
 var test = "Hello";
 
+function ensureAuthenticated(req, res, next){
+	if(req.isAuthenticated()){
+		return next();
+	} else {
+		req.flash('error_msg','You are not logged in');
+		res.redirect('/users/login');
+	}
+}
+
 // Get Homepage
 router.get('/', ensureAuthenticated, function(req, res){
 	RecordingTape.find().exec(function(err, tapes) {
@@ -31,44 +40,42 @@ router.post('/recordnew', ensureAuthenticated, function(req,res){
 	// res.redirect('/');
 })
 
-// Get Records
-// router.get('/get-records', ensureAuthenticated, function(req,res,next){
-	// console.log("GET REC");
-	// RecordingTape.find().exec(function(err, tapes) {
-	// 	console.log(tapes)
-	// })
-// 	var resultArray = [];
-// 	var db = req.db;
-// 	var collection = db.collection('recordingtapes').find();
-// 	collection.forEach(function(recordingtapes, err){
-// 	resultArray.push(recordingtapes);
-// }), function() {
-// 	res.render('index',{users_mixtapes: resultArray});
-// };
-// })
-
-	// {},function(err, recordingtapes){
-	// 	if(err) res.json(err);
-	// 	else res.render('index',{
-	// 		users: recordingtapes});
-	// 	});
-	// })
-
-	// Delete Records
-	// router.post('/delete-records', ensureAuthenticated, function(req,res,next){
-	//
-	//
-	// })
 
 
 
-	function ensureAuthenticated(req, res, next){
-		if(req.isAuthenticated()){
-			return next();
-		} else {
-			req.flash('error_msg','You are not logged in');
-			res.redirect('/users/login');
-		}
+// Check if user is real
+function isUsersReal (req, project4webaudio) {
+		console.log("checking user");
+
+	if (req.user.name !== project4webaudio.username) {
+
+		console.log("Invalid User");
+		res.json({ message: 'FAILED' });
+		return false
 	}
+	return true
+}
+// Delete a record
+router.delete('/record/:id', ensureAuthenticated, function(req, res) {
+	console.log("Is this working?");
+	RecordingTape.findById(req.params.id).then(function (webaudio) {
+		if (webaudio) {
+			if (!isUsersReal(req,webaudio)) return
+			console.log("server delete post");
+			RecordingTape.remove({
+				id: req.params.id
+			}, function(err, tape) {
+				if (err)
+				res.send(err);
 
-	module.exports = router;
+				res.json({ message: 'Successfully deleted' });
+			});
+		} else {
+			console.log("Invalid Record");
+			res.json({ message: 'Record FAILED' });
+		}
+	});
+});
+
+
+module.exports = router;

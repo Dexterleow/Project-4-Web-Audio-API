@@ -18,8 +18,8 @@ $(function () {
     'min':10,
     'max':10,
     'readOnly': true,
-    'width': 120,
-    'height': 120,
+    'width': 110,
+    'height': 110,
     'fgColor': 'black', //font color
     'bgColor': '#b0d5f4', // color of border
     'thickness': 0.2,
@@ -66,18 +66,18 @@ $(function () {
 //button-loop-2
 $(function () {
   $('#button-loop-2').knob({
-    min: '10',
-    max: '10',
-    width:'100',
-    height:'100',
-    thickness: '0.1',
-    fgColor: '#f00',
-    bgColor:'#f00',
-    background: '#ccc000',
-    skin:"tron",
-    readOnly: true,
+    'min':10,
+    'max':10,
+    'readOnly': true,
+    'width': 110,
+    'height': 110,
+    'fgColor': 'black', //font color
+    'bgColor': '#b0d5f4', // color of border
+    'thickness': 0.2,
+    // 'tickColorizeValues': true,
+    'skin':'tron',
     'draw': function() {
-      $(this.i).css('font-size', '14pt');
+    $(this.i).css('outline', 'none').css('font-size', '16pt');
     }
   });
   var button1 = 0;
@@ -89,7 +89,8 @@ $(function () {
         'configure',
         {
           fgColor:"#001",
-          bgColor:"#001"
+          skin:"tron",
+          bgColor:"#45a4f6" //border of circle
         }
       );
     } else {
@@ -98,7 +99,8 @@ $(function () {
         'configure',
         {
           fgColor:"#f00",
-          bgColor:"#FF0000"
+          skin:"tron",
+          bgColor:"#b0d5f4" //border of circle
         }
       );
     }
@@ -108,15 +110,19 @@ $(function () {
 //button-loop-3
 $(function () {
   $('#button-loop-3').knob({
-    min: '10',
-    max: '10',
-    width:'100',
-    height:'100',
-    thickness: '0.1',
-    fgColor: '#f00',
-    bgColor:'#f00',
-    background: '#ccc000',
-    readOnly: true
+    'min':10,
+    'max':10,
+    'readOnly': true,
+    'width': 110,
+    'height': 110,
+    'fgColor': 'black', //font color
+    'bgColor': '#b0d5f4', // color of border
+    'thickness': 0.2,
+    // 'tickColorizeValues': true,
+    'skin':'tron',
+    'draw': function() {
+    $(this.i).css('outline', 'none').css('font-size', '16pt');
+    }
   });
   var button1 = 0;
   $('#button-loop-3').click(function(e){
@@ -127,7 +133,8 @@ $(function () {
         'configure',
         {
           fgColor:"#001",
-          bgColor:"#001"
+          skin:"tron",
+          bgColor:"#45a4f6" //border of circle
         }
       );
     } else {
@@ -136,7 +143,8 @@ $(function () {
         'configure',
         {
           fgColor:"#f00",
-          bgColor:"#FF0000"
+          skin:"tron",
+          bgColor:"#b0d5f4" //border of circle
         }
       );
     }
