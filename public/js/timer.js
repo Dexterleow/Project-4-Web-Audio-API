@@ -7,6 +7,8 @@
   var buttonReset = document.getElementById('button-reset');
   var buttonPlayback = document.getElementById('button-playback');
   var Interval;
+  var buttonStop = document.getElementById('button-stop');
+
 
   buttonStart.onclick = function () {
 
@@ -38,6 +40,21 @@
   buttonPlayback.onclick = function() {
      playback(recording); //playback recording
   }
+
+  buttonStop.onclick = function() {
+    stopButton();
+    if (!recordStop) {
+      clearInterval(Interval);
+      realtime = 0;
+     tens = "00";
+   	seconds = "00";
+    appendTens.innerHTML = tens;
+    appendSeconds.innerHTML = seconds;
+    revertButtonColor();
+    }
+     console.log('stop the music');
+  }
+
 
 
   function startTimer () {

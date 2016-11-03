@@ -1,16 +1,17 @@
-// $('.dial').knob(
-// {
-//   'min':10,
-//   'max':10,
-//   'width':100,
-//   'height':100,
-//   'displayInput':true,
-//   'data-thickness':0.1,
-//   'fgColor':"#FF0000",
-//   'thickness':0.1,
-//
-// });
 
+function revertButtonColor () {
+  for (var i = 1; i < 7; i++) {
+$("#button-loop-" + i).trigger(
+  'configure',
+  {
+    fgColor:"#f00",
+    skin:"tron",
+    bgColor:"#b0d5f4" //border of circle
+  }
+);
+
+}
+}
 
 //button-loop-1
 $(function () {
@@ -35,6 +36,7 @@ $(function () {
   var button1 = 0;
   $('#button-loop-1').click(function(e){
     // e.preventDefault();
+
     if (button1 === 0) {
       button1 ++;
       // console.log(button1);
@@ -62,6 +64,7 @@ $(function () {
     }
   });
 });
+
 
 //button-loop-2
 $(function () {
@@ -251,7 +254,6 @@ $(function () {
     'fgColor': 'black', //font color
     'bgColor': '#b0d5f4', // color of border
     'thickness': 0.2,
-    'inputColor':'#45a4f6',
     // 'tickColorizeValues': true,
     'skin':'tron',
     'draw': function() {

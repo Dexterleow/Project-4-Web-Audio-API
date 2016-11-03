@@ -15,7 +15,22 @@ elem {
 body {
   /*background-color: #f4f1f2;
   /*background-color: #729cdb;*/
-  background-color: #ffffff;
+background-color: #ffffff;
+font-family: 'Merriweather', serif;
+padding-top: 20px;
+padding-bottom: 20px;
+}
+
+.main-section{
+  font-size: 30px;
+  color:white;
+  border:10px;
+}
+
+.main_header{
+  font-size: 90px;
+  color:white;
+   -webkit-text-stroke: 2px black;
 }
 
 .mainTitle{
@@ -25,34 +40,18 @@ body {
 }
 
 #c{
-/*width:300px;
-height:300px;*/
-  background-color: #ffffff;
+background-color: #ffffff;
   width:100%;
   height: 450px;
 }
 
-/*music css*/
-
-/* Space out content a bit */
-body {
-  padding-top: 20px;
-  padding-bottom: 20px;
+.top_panel{
+    /*background-image: url(../img/fast_food.jpg);*/
+    background-color: #1dafc3;
+    height:150px;
+    background-size: contain;
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-right: 15px;
-  padding-left: 15px;
-}
-
-/* Custom page header */
-.header {
-  padding-bottom: 20px;
-  border-bottom: 1px solid #e5e5e5;
-}
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
   margin-top: 0;
@@ -63,35 +62,14 @@ body {
 /* Custom page footer */
 .footer {
   padding-top: 19px;
-  color: #777;
+  background-color: #1dafc3;
   border-top: 1px solid #e5e5e5;
+  height:200px;
 }
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  /* Remove the padding we set earlier */
-  .header,
-  .footer {
-    padding-right: 0;
-    padding-left: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
-}
-
-.page-header{
-  margin-top:0;
-}
-
-footer{
+/*footer{
   margin-top:40px;
-}
+}*/
 
 .cassette {
     background-image: url(../img/yellow_casset.jpeg);
@@ -107,6 +85,7 @@ footer{
 .buttoncolor{
   border: 1px solid;
 }
+
 
 #button-loop-7 {
   background-image: url(../img/michaeljackson.jpg);

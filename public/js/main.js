@@ -29,8 +29,6 @@ onload = function () { //this will be executed when the page is ready
     source_once: {}
   };
 
-  // window.audioFiles = ['beat.wav', 'synth.wav', 'synth.wav']; //this is gonna be the array with all file names
-
   window.canvas = document.getElementById('c');
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
@@ -119,30 +117,15 @@ onload = function () { //this will be executed when the page is ready
                 if (j === 0) {
                   elem.play();
                   console.log(i);
-
-                  // dataArray = [{button_id: 3, time_interval: 0}, {button_id: 1, time_interval: 2000}]
-                  // dataArray.push({})
                   j ++
                 } else {
                   elem.pause();
                   j --
                 }
-
-
-                // //elem.setAttribute('controls', ''); //we set the controls option, so you have the play/pause etc buttons enabled
-                // document.body.appendChild(elem); //now we add that element to the body
-                // sources[i] = context.createMediaElementSource(elem); //we create a mediasource for it
-                // sources[i].connect(analyser); //we connect that to the analyser
-                // elem.loop = true; // to enable looping of the music
-
               });
             });
           },
           req.send();
-
-
-
-
           letsDraw();
         })();
       }
@@ -158,32 +141,23 @@ onload = function () { //this will be executed when the page is ready
         analyser.getByteFrequencyData(fbc_array); //get frequency from the analyser node
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.fillStyle = "white";
-        ctx.font = "bold 12px Arial";
-        bars = 150;
-
-
-
-        //drawing bars
+        // ctx.font = "bold 12px Arial";
+        bars = 250;
+      //drawing bars
         for (var i = 0; i < fbc_array.length; i++) { //but this doesn't
         /*fill the canvas*/
         x = i * 2;
-        barWidth = 2;//1 seems to be the best
+        barWidth = 1;//1 seems to be the best
         barHeight = -(fbc_array[i] / 1.8);
         realBarHeight = -fbc_array[i]/(256/canvas.height)
-        //colours react to the  frequency loudness
-        hue = parseInt(500 * (1 - (barHeight / 200)), 10);
-        ctx.fillStyle = 'hsl(' + hue + ',75%,50%)';
+        //colours react to the frequency loudness
+        hue = parseInt(1200 * (1 - (barHeight / 200)), 10);
+        ctx.fillStyle = 'hsl(' + hue + ',85%,70%)';
         ctx.fillRect(x, canvas.height, barWidth, realBarHeight);
-
-
-
-
       }
     }
 
-
-
-    //attaching to buttons
+  //attaching to buttons
     //-----------------
     // Audio Functions
     //-----------------
@@ -256,14 +230,5 @@ onload = function () { //this will be executed when the page is ready
         }
       }
     };
-
   }
 }
-
-// sound controls
-// var volumeBar = document.getElementById("volume-bar");
-// // Event listener for the volume bar
-// volumeBar.addEventListener("change", function() {
-//   // Update the video volume
-//   video.volume = volumeBar.value;
-// });

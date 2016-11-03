@@ -50,9 +50,15 @@ function AppendAction(e) {
     e.stopPropagation();
 }
 
+var recordStop = false;
+
 function playback(recording) {
+  if (recording.length == 0) {
+    return;
+  }
   var tens = 00;
-  Interval = setInterval(startTimer, 50);
+  Interval = setInterval(50);
+  recordStop = true;
   for (i = 0; i < recording.length; i++) {
 //recording length
     if (recording[i].time == tens) {
@@ -65,6 +71,27 @@ function playback(recording) {
   }
 }
 
+function stopButton (){
+    recordStop = false;
+
+    clearInterval(Interval);
+    realtime = 0;
+    tens = "00";
+    seconds = "00";
+    appendTens.innerHTML = tens;
+    appendSeconds.innerHTML = seconds;
+
+    //Get and pause all audio
+    var list = document.getElementsByTagName("audio");
+
+    for (var i = 0; i < list.length; i++) {
+      //console.log(list[i]);
+      list[i].pause();
+    }
+}
+
+
+
 function recordReset() {
   //array of objects
   //refresh recording
@@ -74,12 +101,10 @@ function recordReset() {
 
 function Matchtape(event) {
   var id = String(event.target.id);
-  console.log(id);
   for (var i = 0; i < tapes.length; i++) {
     if (tapes[i]._id === id) {
-      var recording = parseRecording(tapes[i].recording[0])
-      console.log(recording);
-      playback(recording);
+      var recording1 = parseRecording(tapes[i].recording[0])
+      playback(recording1);
     } else {
       console.log("help")
     }

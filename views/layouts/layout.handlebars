@@ -5,26 +5,32 @@
 	<title>JSONG</title>
 	<link rel="stylesheet" href="/css/bootstrap.css" />
 	<link rel="stylesheet" href="/css/style.css" />
+<link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="//code.jquery.com/jquery.js"></script>
 </head>
 <body>
 	<!-- <div class="container"> -->
-		<div class="header clearfix">
+		<div class="header clearfix top_panel">
 			<nav>
-				<ul class="nav nav-pills pull-right">
+				<ul class="nav nav-pills pull-right main-section">
 					{{#if user}}
 					<li role="presentation">	{{ user.name }}</li>
-					<li role="presentation"><a href="/">Music Board</a></li>
-					<li role="presentation"><a href="/users/logout">Logout</a></li>
+					<li role="presentation"><a href="/">NEWEST MIXES</a></li>
+					<li role="presentation"><a href="/">WEEKLY TOP 10</a></li>
+					<li role="presentation"><a href="/">MUSIC BOARD</a></li>
+					<li role="presentation"><a href="/users/logout">LOGOUT</a></li>
 
 					{{else}}
+					<li role="presentation"><a href="/">NEWEST MIXES</a></li>
+					<li role="presentation"><a href="/">WEEKLY TOP 10</a></li>
+					<li role="presentation"><a href="/">MUSIC BOARD</a></li>
 					<li role="presentation"><a href="/users/login">Login</a></li>
 					<li role="presentation"><a href="/users/register">Register</a></li>
 					{{/if}}
 				</ul>
 			</nav>
-			<h3 class="text-muted">JSONG</h3>
+			<h1 class="main_header">JSONG</h1>
 		</div>
 
 
