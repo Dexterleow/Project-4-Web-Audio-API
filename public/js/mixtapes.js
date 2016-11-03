@@ -3,61 +3,13 @@ var recording = [];
 var checkRecord = false;
 var triggered = [];
 
-// var tapes = $.ajax({
-//       type: 'Get',
-//       url: '/',
-//       data: JSON.stringify({ tapes: tapes }),
-//       dataType: 'json',
-//       contentType: 'application/json; charset=utf-8',
-//       success: function (data) {
-//           //
-//           console.log("Horray");
-//       }
-//   });
-
-
-
 console.log(tapes);
-// $.get('/', function(tapes) {
-//   tapes = JSON.parse(tapes);
-//   console.log(tapes);
-// // pass server tapes to client tapes
-// });
-// $.get('/', function(data){
-//   alert("Data: " + data);
-// });
-
-// function getSettings(context, fn) {
-//   $.get('/api/getsettings.php', function (data, status) {
-//     if (status === 'success') {
-//       fn.call(context, data);
-//     }
-//   });
-// }
-// getSettings(this, function (settings) {
-//   YOUR_APP.settings = settings;
-//   // do more stuff...
-// });
-
-
-
-
-
-
-
-
-
 
 function record() {
-  //array of objects
-  //refresh recording
-  //while recording is live (set cancelling conditions)
   checkRecord = true;
   recording = [];
   console.log(recording);
   listenAllbuttons();
-
-
 }
 
 function recordFinished(){
@@ -98,13 +50,9 @@ function AppendAction(e) {
     e.stopPropagation();
 }
 
-//Concepts:
-//given a recording array, reproduce the actions
-
 function playback(recording) {
-
   var tens = 00;
-
+  Interval = setInterval(startTimer, 50);
   for (i = 0; i < recording.length; i++) {
 //recording length
     if (recording[i].time == tens) {
@@ -131,7 +79,7 @@ function Matchtape(event) {
     if (tapes[i]._id === id) {
       var recording = parseRecording(tapes[i].recording[0])
 
-      console.log(tapes[i].recording[0]);
+      console.log(recording);
       playback(recording);
 
     } else {
@@ -144,10 +92,6 @@ function parseRecording(obj) {
   var recording = [];
 
   for (var j=0; j < (Object.keys(obj).length)/2 ; j++) {
-
-      // tapes[4].recording[0]['recording[0][button]']
-      // var buttonClicked = tapes[i].recording.
-      // var action = {button:buttonClicked, time:tens};
       var ButtonKeyName = 'recording[' + j +'][button]'
       var TimeKeyName = 'recording[' + j +'][time]'
       var buttonClicked = obj[ButtonKeyName];
@@ -161,14 +105,12 @@ function parseRecording(obj) {
 
 
 function playMixtapes() {
-  //Get the correct recording using the id from all tapes
   var theParent = document.querySelectorAll(".playButton");
 
   for(var i=0;i<theParent.length;i++){
     theParent[i].addEventListener('click',Matchtape,false);
 
   }
-  //Pass the recording to playback
 
 }
 playMixtapes();
