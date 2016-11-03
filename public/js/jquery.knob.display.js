@@ -251,6 +251,7 @@ $(function () {
     'fgColor': 'black', //font color
     'bgColor': '#b0d5f4', // color of border
     'thickness': 0.2,
+    'inputColor':'#45a4f6',
     // 'tickColorizeValues': true,
     'skin':'tron',
     'draw': function() {
@@ -284,37 +285,3 @@ $(function () {
     }
   });
 });
-
-
-
-
-
-// $(function () {
-//   $('.albumbutton');
-//   var button1 = 0;
-//   $('.albumbutton').click(function(e){
-//     // e.preventDefault();
-//     if (button1 === 0) {
-//       button1 ++;
-//
-//       $('.albumbutton').trigger(
-//         'configure',
-//         {
-//           fgColor:"#001",
-//           skin:"tron",
-//           bgColor:"#45a4f6" //border of circle
-//         }
-//       );
-//     } else {
-//       button1 --;
-//       $('.albumbutton').trigger(
-//         'configure',
-//         {
-//           fgColor:"#f00",
-//           skin:"tron",
-//           bgColor:"#b0d5f4" //border of circle
-//         }
-//       );
-//     }
-//   });
-// });
