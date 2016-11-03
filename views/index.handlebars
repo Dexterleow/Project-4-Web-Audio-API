@@ -94,21 +94,21 @@
 <div class="container">
        {{#each tapes}}
 
-  <div class="well">
+  <div class="well col-md-3 cassette">
 
     <br>
-    <div>
+    <div class="username_font">
     <h3>  User: {{ username }} </h3>
     </div>
         <div>
     <small> Recording: {{ recording }}</small>
   </div>
     <div>
-      <a id="{{ _id }}" class="btn btn-success glyphicon glyphicon-play-circle playButton"></a>
-      <a class="btn btn-info glyphicon glyphicon-heart"></a>
+      <a id="{{ _id }}" class="btn btn-success glyphicon glyphicon-play-circle playButton buttoncolor"></a>
+      <a class="btn btn-info glyphicon glyphicon-heart buttoncolor"></a>
         {{#isOwner username }}
         <!-- username == recordingtapes.username -->
-      <a id="{{ _id }}" class="btn btn-danger glyphicon glyphicon-trash delete-btn"></a>
+      <a id="{{ _id }}" class="btn btn-danger glyphicon glyphicon-trash delete-btn buttoncolor"></a>
         {{/isOwner}}
     </div>
   </div>

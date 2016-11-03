@@ -1,7 +1,7 @@
 {
-  "name": "loginapp",
+  "name": "JSONG",
   "version": "1.0.0",
-  "description": "login_authentication_system",
+  "description": "making_music_with_javascript",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
