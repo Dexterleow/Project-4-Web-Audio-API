@@ -41,20 +41,24 @@ router.post('/recordnew', ensureAuthenticated, function(req,res){
 })
 
 
+console.log("A");
+
+// // Check if user is real
+// function isUsersReal (req, project4webaudio) {
+// 		console.log("checking user");
+//
+// 	if (req.user.name !== project4webaudio.username) {
+//
+// 		console.log("Invalid User");
+// 		res.json({ message: 'FAILED' });
+// 		return false
+// 	}
+// 	return true
+// }
+//
+// isUsersReal();
 
 
-// Check if user is real
-function isUsersReal (req, project4webaudio) {
-		console.log("checking user");
-
-	if (req.user.name !== project4webaudio.username) {
-
-		console.log("Invalid User");
-		res.json({ message: 'FAILED' });
-		return false
-	}
-	return true
-}
 // Delete a record
 router.delete('/record/:id', ensureAuthenticated, function(req, res) {
 	console.log("Is this working?");
@@ -67,7 +71,6 @@ router.delete('/record/:id', ensureAuthenticated, function(req, res) {
 			}, function(err, tape) {
 				if (err)
 				res.send(err);
-
 				res.json({ message: 'Successfully deleted' });
 			});
 		} else {
