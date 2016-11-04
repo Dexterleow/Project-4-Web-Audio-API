@@ -143,7 +143,7 @@ onload = function () { //this will be executed when the page is ready
         ctx.fillStyle = "white";
         // ctx.font = "bold 12px Arial";
         bars = 250;
-      //drawing bars
+        //drawing bars
         for (var i = 0; i < fbc_array.length; i++) { //but this doesn't
         /*fill the canvas*/
         x = i * 2;
@@ -157,7 +157,7 @@ onload = function () { //this will be executed when the page is ready
       }
     }
 
-  //attaching to buttons
+    //attaching to buttons
     //-----------------
     // Audio Functions
     //-----------------
@@ -219,7 +219,7 @@ onload = function () { //this will be executed when the page is ready
         audio.source_loop[n]._playing = true;
       }
     };
-
+    
     audio.stop = function(n) {
       if (audio.source_loop[n]._playing) {
         audio.source_loop[n][audio.compatibility.stop](0);

@@ -9,7 +9,7 @@ var RecordingtapeSchema = new mongoose.Schema({
     type: Array
   }
 
- });
+});
 
 //Creating a model
 var Recordingtape = module.exports = mongoose.model('Recordingtape', RecordingtapeSchema);

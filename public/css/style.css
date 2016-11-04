@@ -12,19 +12,19 @@ elem {
 }
 
 body {
-background-color: #ffffff;
-font-family: 'Merriweather', serif;
-padding-top: 20px;
-padding-bottom: 20px;
+  background-color: #ffffff;
+  font-family: 'Merriweather', serif;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .musicControls{
-    text-align: center;
+  text-align: center;
 }
 
-  .beatControls{
-    font-size:16px;
-  }
+.beatControls{
+  font-size:16px;
+}
 
 .main_header{
   font-size: 90px;
@@ -42,12 +42,12 @@ padding-bottom: 20px;
   align-items: center;
   align-content: center;
   margin-left: auto;
-    margin-right: auto;
+  margin-right: auto;
 }
 
 .twitter_img{
   background-color: #57aced;
-    border: 1px solid black;
+  border: 1px solid black;
   height: 200px;
   background-image: url(../img/twitter_img.png);
   background-size: contain;
@@ -56,12 +56,12 @@ padding-bottom: 20px;
   align-items: center;
   align-content: center;
   margin-left: auto;
-    margin-right: auto;
+  margin-right: auto;
 }
 
 .clock{
   text-align: center;
-    /*border: 2px solid black;*/
+  /*border: 2px solid black;*/
 }
 
 #seconds{
@@ -69,24 +69,24 @@ padding-bottom: 20px;
 }
 
 #c{
-background-color: #ffffff;
+  background-color: #ffffff;
   width:100%;
   height: 450px;
 }
 
 /*.top_panel{*/
-    /*background-image: url(../img/fast_food.jpg);*/
-    /*background-color: #3598db;
-    height:150px;*/
-    /*background-size: contain;
-    padding: 10px;*/
-    /*margin-bottom: 50px;
-    font: white;
-    font-size: 24px;
+/*background-image: url(../img/fast_food.jpg);*/
+/*background-color: #3598db;
+height:150px;*/
+/*background-size: contain;
+padding: 10px;*/
+/*margin-bottom: 50px;
+font: white;
+font-size: 24px;
 }*/
 
 .footer-tag{
-    color:white;
+  color:white;
 }
 
 /* Make the masthead heading the same height as the navigation */
@@ -99,15 +99,15 @@ background-color: #ffffff;
 /* Custom page footer */
 .footer {
   padding-top: 19px;
-    background-color: #3598db;
+  background-color: #3598db;
   border-top: 1px solid #e5e5e5;
   height:200px;
 }
 
 .cassette {
-    background-image: url(../img/yellow_casset.jpeg);
-    background-size: contain;
-    background-repeat: no-repeat;
+  background-image: url(../img/yellow_casset.jpeg);
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .username_font{
@@ -130,11 +130,11 @@ background-color: #ffffff;
 }
 
 .top_navbar{
-    background-color: #3598db;
-    color: white !important;
-    padding-bottom:10px;
-    margin-bottom: 6px;
-    margin-top: 0px;
+  background-color: #3598db;
+  color: white !important;
+  padding-bottom:10px;
+  margin-bottom: 6px;
+  margin-top: 0px;
 }
 
 

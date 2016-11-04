@@ -23,7 +23,7 @@ function recordFinished(){
   $.post("/recordnew", {recording: recording});
   console.log(recording);
   console.log("Stopeed");
-// push to database
+  // push to database
 }
 
 
@@ -38,16 +38,16 @@ function listenAllbuttons() {
 }
 
 function AppendAction(e) {
-    var buttonClicked = e.srcElement.id
-    triggered.push(buttonClicked);
+  var buttonClicked = e.srcElement.id
+  triggered.push(buttonClicked);
 
-    //case statements
-    var action = {button:buttonClicked, time: (seconds * 100) + tens};
-    if(checkRecord){
-      recording.push(action);
-    }
+  //case statements
+  var action = {button:buttonClicked, time: (seconds * 100) + tens};
+  if(checkRecord){
+    recording.push(action);
+  }
 
-    e.stopPropagation();
+  e.stopPropagation();
 }
 
 var recordStop = false;
@@ -60,34 +60,34 @@ function playback(recording) {
   Interval = setInterval(50);
   recordStop = true;
   for (i = 0; i < recording.length; i++) {
-//recording length
+    //recording length
     if (recording[i].time == tens) {
-    var b = document.getElementById(recording[i].button);
-    b.click();
-  } else {
-    i--
-  }
+      var b = document.getElementById(recording[i].button);
+      b.click();
+    } else {
+      i--
+    }
     tens++
   }
 }
 
 function stopButton (){
-    recordStop = false;
+  recordStop = false;
 
-    clearInterval(Interval);
-    realtime = 0;
-    tens = "00";
-    seconds = "00";
-    appendTens.innerHTML = tens;
-    appendSeconds.innerHTML = seconds;
+  clearInterval(Interval);
+  realtime = 0;
+  tens = "00";
+  seconds = "00";
+  appendTens.innerHTML = tens;
+  appendSeconds.innerHTML = seconds;
 
-    //Get and pause all audio
-    var list = document.getElementsByTagName("audio");
+  //Get and pause all audio
+  var list = document.getElementsByTagName("audio");
 
-    for (var i = 0; i < list.length; i++) {
-      //console.log(list[i]);
-      list[i].pause();
-    }
+  for (var i = 0; i < list.length; i++) {
+    //console.log(list[i]);
+    list[i].pause();
+  }
 }
 
 
@@ -115,13 +115,13 @@ function parseRecording(obj) {
   var recording = [];
 
   for (var j=0; j < (Object.keys(obj).length)/2 ; j++) {
-      var ButtonKeyName = 'recording[' + j +'][button]'
-      var TimeKeyName = 'recording[' + j +'][time]'
-      var buttonClicked = obj[ButtonKeyName];
-      var timeClicked = parseInt(obj[TimeKeyName]);
-      var action = {button:buttonClicked, time:timeClicked};
+    var ButtonKeyName = 'recording[' + j +'][button]'
+    var TimeKeyName = 'recording[' + j +'][time]'
+    var buttonClicked = obj[ButtonKeyName];
+    var timeClicked = parseInt(obj[TimeKeyName]);
+    var action = {button:buttonClicked, time:timeClicked};
 
-      recording.push(action);
+    recording.push(action);
   }
   return recording
 }
@@ -144,17 +144,17 @@ playMixtapes();
 // Delete mixtape
 $(function() { $('.delete-btn').click(function(e) {
   console.log("able to match delete-btn");
-    e.preventDefault();
-    // var url = $(this).attr('href');
-    var url = "/record/" + $(this).attr('id');
-    console.log("HELOOOSAS");
-    $.ajax({
-      url: url,
-      method: 'DELETE'
-    }).done(function() {
-        console.log("able to match delete-btn2");
-      window.location.href = '/';
+  e.preventDefault();
+  // var url = $(this).attr('href');
+  var url = "/record/" + $(this).attr('id');
+  console.log("HELOOOSAS");
+  $.ajax({
+    url: url,
+    method: 'DELETE'
+  }).done(function() {
+    console.log("able to match delete-btn2");
+    window.location.href = '/';
 
-    });
   });
-  });
+});
+});

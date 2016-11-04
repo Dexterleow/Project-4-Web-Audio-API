@@ -1,16 +1,16 @@
 
 function revertButtonColor () {
   for (var i = 1; i < 7; i++) {
-$("#button-loop-" + i).trigger(
-  'configure',
-  {
-    fgColor:"#f00",
-    skin:"tron",
-    bgColor:"#b0d5f4" //border of circle
-  }
-);
+    $("#button-loop-" + i).trigger(
+      'configure',
+      {
+        fgColor:"#f00",
+        skin:"tron",
+        bgColor:"#b0d5f4" //border of circle
+      }
+    );
 
-}
+  }
 }
 
 //button-loop-1
@@ -27,7 +27,7 @@ $(function () {
     // 'tickColorizeValues': true,
     'skin':'tron',
     'draw': function() {
-    $(this.i).css('outline', 'none').css('font-size', '16pt');
+      $(this.i).css('outline', 'none').css('font-size', '16pt');
     }
   });
 
@@ -80,7 +80,7 @@ $(function () {
     // 'tickColorizeValues': true,
     'skin':'tron',
     'draw': function() {
-    $(this.i).css('outline', 'none').css('font-size', '16pt');
+      $(this.i).css('outline', 'none').css('font-size', '16pt');
     }
   });
   var button1 = 0;
@@ -124,7 +124,7 @@ $(function () {
     // 'tickColorizeValues': true,
     'skin':'tron',
     'draw': function() {
-    $(this.i).css('outline', 'none').css('font-size', '16pt');
+      $(this.i).css('outline', 'none').css('font-size', '16pt');
     }
   });
   var button1 = 0;
@@ -169,7 +169,7 @@ $(function () {
     // 'tickColorizeValues': true,
     'skin':'tron',
     'draw': function() {
-    $(this.i).css('outline', 'none').css('font-size', '16pt');
+      $(this.i).css('outline', 'none').css('font-size', '16pt');
     }
   });
   var button1 = 0;
@@ -213,7 +213,7 @@ $(function () {
     // 'tickColorizeValues': true,
     'skin':'tron',
     'draw': function() {
-    $(this.i).css('outline', 'none').css('font-size', '16pt');
+      $(this.i).css('outline', 'none').css('font-size', '16pt');
     }
   });
   var button1 = 0;
@@ -257,7 +257,7 @@ $(function () {
     // 'tickColorizeValues': true,
     'skin':'tron',
     'draw': function() {
-    $(this.i).css('outline', 'none').css('font-size', '16pt');
+      $(this.i).css('outline', 'none').css('font-size', '16pt');
     }
   });
   var button1 = 0;
