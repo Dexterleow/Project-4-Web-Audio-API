@@ -4,6 +4,8 @@ onload = function () { //this will be executed when the page is ready
 
   var random = Math.random, circles = [];
 
+
+
   var audio = {
     buffer: {},
     compatibility: {},
@@ -140,9 +142,18 @@ onload = function () { //this will be executed when the page is ready
         fbc_array = new Uint8Array(analyser.frequencyBinCount);
         analyser.getByteFrequencyData(fbc_array); //get frequency from the analyser node
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = "white";
+        ctx.fillStyle = "white"; // Color of the bars
         // ctx.font = "bold 12px Arial";
+
+        //Circles Draw
+        for (var i = 1; i < circles.length; i++) {
+          circles[i].radius = Math.log2(fbc_array[i] * 2);
+          circles[i].y = circles[i].y > canvas.height ? 0 : circles[i].y + 1;
+          circles[i].draw();
+        }
+
         bars = 150;
+
         //drawing bars
         for (var i = 0; i < fbc_array.length; i++) { //but this doesn't
         /*fill the canvas*/
@@ -155,6 +166,31 @@ onload = function () { //this will be executed when the page is ready
         ctx.fillStyle = 'hsl(' + hue + ',85%,70%)';
         ctx.fillRect(x, canvas.height, barWidth, realBarHeight);
       }
+
+
+
+    }
+
+    function getRandomColor(){
+      return random() * 255 >> 0;
+    }
+
+    function Circle() {
+      this.x = random() * canvas.width;
+      this.y = random() * canvas.height;
+      this.radius = random() * 100 + 50;
+      this.color = 'rgb(' + getRandomColor() + ',' + getRandomColor() + ',' + getRandomColor() + ')';
+    }
+
+    Circle.prototype.draw = function() {
+      var that = this;
+      ctx.save();
+      ctx.beginPath();
+      ctx.globalAlpha = random() / 3 + 0.2;
+      ctx.arc(that.x, that.y, that.radius, 0, Math.PI * 2);
+      ctx.fillStyle = this.color;
+      ctx.fill();
+      ctx.restore();
     }
 
     //attaching to buttons
@@ -230,5 +266,11 @@ onload = function () { //this will be executed when the page is ready
         }
       }
     };
+  }
+
+  //Circles Draw
+  for (var i =0; i < 20; i++) {
+    circles[i] = new Circle();
+    circles[i].draw();
   }
 }
