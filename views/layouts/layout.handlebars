@@ -3,9 +3,11 @@
 <head>
 	<meta charset="utf-8">
 	<title>JSONG</title>
+
 	<link rel="stylesheet" href="/css/bootstrap.css" />
 	<link rel="stylesheet" href="/css/style.css" />
-	<link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+	<!-- <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet"> -->
+	<link href="https://fonts.googleapis.com/css?family=Merienda+One" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="//code.jquery.com/jquery.js"></script>
 </head>
@@ -27,17 +29,17 @@
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">
 					{{#if user}}
-					<li role="presentation"><a href="/">NEWEST MIXES</a></li>
-					<li role="presentation"><a href="/">WEEKLY TOP 10</a></li>
-					<li role="presentation"><a href="/">MUSIC BOARD</a></li>
-					<li role="presentation"><a href="/users/logout">LOGOUT</a></li>
+					<li role="presentation"><a class ="top-navlinks" href="/">NEWEST MIXES</a></li>
+					<li role="presentation"><a class ="top-navlinks" href="/">WEEKLY TOP 10</a></li>
+					<li role="presentation"><a class ="top-navlinks" href="/">MUSIC BOARD</a></li>
+					<li role="presentation"><a class ="top-navlinks" href="/users/logout">LOGOUT</a></li>
 
 					{{else}}
-					<li role="presentation"><a href="/">NEWEST MIXES</a></li>
-					<li role="presentation"><a href="/">WEEKLY TOP 10</a></li>
-					<li role="presentation"><a href="/">MUSIC BOARD</a></li>
-					<li role="presentation"><a href="/users/login">Login</a></li>
-					<li role="presentation"><a href="/users/register">Register</a></li>
+					<li role="presentation"><a class ="top-navlinks" href="/">NEWEST MIXES</a></li>
+					<li role="presentation"><a class ="top-navlinks" href="/">WEEKLY TOP 10</a></li>
+					<li role="presentation"><a class ="top-navlinks" href="/">MUSIC BOARD</a></li>
+					<li role="presentation"><a class ="top-navlinks" href="/users/login">Login</a></li>
+					<li role="presentation"><a class ="top-navlinks" href="/users/register">Register</a></li>
 					{{/if}}
 
 				</ul>

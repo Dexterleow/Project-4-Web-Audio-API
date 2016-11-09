@@ -142,12 +142,12 @@ onload = function () { //this will be executed when the page is ready
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.fillStyle = "white";
         // ctx.font = "bold 12px Arial";
-        bars = 250;
+        bars = 150;
         //drawing bars
         for (var i = 0; i < fbc_array.length; i++) { //but this doesn't
         /*fill the canvas*/
         x = i * 2;
-        barWidth = 1;//1 seems to be the best
+        barWidth = 2;//1 seems to be the best
         barHeight = -(fbc_array[i] / 1.8);
         realBarHeight = -fbc_array[i]/(256/canvas.height)
         //colours react to the frequency loudness
@@ -219,7 +219,7 @@ onload = function () { //this will be executed when the page is ready
         audio.source_loop[n]._playing = true;
       }
     };
-    
+
     audio.stop = function(n) {
       if (audio.source_loop[n]._playing) {
         audio.source_loop[n][audio.compatibility.stop](0);
