@@ -15,7 +15,7 @@ body {
   background-color: #ffffff;
   /*font-family: 'Merriweather', serif;*/
   font-family: 'Merienda One', cursive;
-  padding-top: 20px;
+  /*padding-top: 20px;*/
   padding-bottom: 20px;
 }
 
@@ -115,7 +115,7 @@ body {
 }
 
 #JSONG{
-  font-size: 48px;
+  font-size: 52px;
   color: white !important;
 }
 
@@ -129,6 +129,18 @@ body {
 
 .top-navlinks{
  color: white !important;
+}
+
+#main_tagline{
+margin: 0 auto;
+font-size: 56px;
+
+}
+
+#main_image {
+  position: relative;
+  /*top: 50%;*/
+  left: 25%;
 }
 
 #button-loop-7 {
