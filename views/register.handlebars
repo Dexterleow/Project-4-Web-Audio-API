@@ -1,5 +1,6 @@
-<div class="container">
-  <h2 class="page-header">Register</h2>
+<div class="container register-page">
+  <h2>Register</h2>
+  <hr class="colorgraph">
   {{#if errors}}
   {{#each errors}}
   <div class="alert alert-danger">{{msg}}</div>
@@ -26,13 +27,13 @@
       <label>Confirm Password</label>
       <input type="password" class="form-control" placeholder="Password" name="password2">
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <hr class="colorgraph">
+    <button type="submit" class="btn btn-success">Submit</button>
   </form>
-
-  <footer class="footer navbar-fixed-bottom footer-tag">
-    <div class="container">
-      <p>2016 JSONG.</p>
-    </div>
-  </footer>
-
 </div>
+
+<footer class="footer navbar-fixed-bottom footer-tag">
+  <div class="container">
+    <p>2016 JSONG.</p>
+  </div>
+</footer>
