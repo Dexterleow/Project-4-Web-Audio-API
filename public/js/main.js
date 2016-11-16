@@ -5,7 +5,6 @@ onload = function () { //this will be executed when the page is ready
   var random = Math.random, circles = [];
 
 
-
   var audio = {
     buffer: {},
     compatibility: {},
@@ -52,6 +51,9 @@ onload = function () { //this will be executed when the page is ready
     // More info at http://caniuse.com/#feat=audio-api
     window.AudioContext = window.AudioContext || window.webkitAudioContext;
     audio.context = new window.AudioContext();
+
+
+
   } catch(e) {
     audio.proceed = false;
     alert('Web Audio API not supported in this browser.');
@@ -158,7 +160,7 @@ onload = function () { //this will be executed when the page is ready
         for (var i = 0; i < fbc_array.length; i++) { //but this doesn't
         /*fill the canvas*/
         x = i * 2;
-        barWidth = 1.8;//1 seems to be the best
+        barWidth = 2;//1 seems to be the best
         barHeight = -(fbc_array[i] / 1.8);
         realBarHeight = -fbc_array[i]/(256/canvas.height)
         //colours react to the frequency loudness
